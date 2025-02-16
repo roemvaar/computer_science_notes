@@ -25,10 +25,10 @@ In C++, the standard library provides a queue implementation named `std::queue`.
 
 | Operation      | Time Complexity | Notes                                      |
 |----------------|-----------------|--------------------------------------------|
-| Enqueue         | O(1)          | Insert                                      |
+| Enqueue(elem)         | O(1)          | Insert                                      |
 | Dequeue         | O(1)          | Delete takes no argument                    |
-| Front            | O(1)        |                                               |
-| Back            | O(1)        |                                               |
+| Peek            | O(1)        |                                               |
+| Empty            | O(1)        |                                               |
 
 ---
 
@@ -38,7 +38,7 @@ In C++, the standard library provides a queue implementation named `std::queue`.
 
 ---
 
-## **6. Common Mistakes / Corner Cases **
+## **6. Common Mistakes / Corner Cases**
 
 * Easy to mess up updating of the first and last nodes in a queue.
 * Empty queue.

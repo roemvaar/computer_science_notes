@@ -42,6 +42,13 @@ A common algorithm design tactic is to divide a problem into sub-problems of the
 
 ## **5. Important Techniques**
 
+* **Recursive Backtracking**
+* **Memoization** (Top-Down DP)
+* **Tabulation** (Bottom-Up DP)
+* **Bottom-Up No-Memory DP**
+
+<!-- https://www.instagram.com/reel/DGI74QDsLpY/?utm_source=ig_web_copy_link -->
+
 ---
 
 ## **6. Common Mistakes**
