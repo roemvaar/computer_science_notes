@@ -23,6 +23,10 @@ On boot, the kernel reads the RTC and uses it to initialize the wall time, which
 
 The idea behind the system timer is to provide a mechanism for driving an interrupt at a periodic rate.
 
+<!-- An engineer from Google has suggested increasing the default timer interrupt frequency in the Linux kernel to 1000 Hz, which wuold lead to more frequent task switching and a reduction in the time slice used by the scheduler.
+
+Currently, the default is set to 250 Hz, striking a balance between performance, latency, and power consumption. -->
+
 ## Timers
 
 Timers are essential for managing the flow of time in the kernel code. A timer is easy to use. You perform some initial setup, specify an expiration time, specify a function to execute upon said expiration, and activate the timer. The given function runs after the timer expires. Timers are not cyclic. The timer is destroyed after it expires.

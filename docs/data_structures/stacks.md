@@ -28,7 +28,6 @@ A stack is a data structure that uses the FILO mechanism (First In, Last Out), i
 | Pop            | O(1)          | Retrieve and remove the element on top of the stack |
 | Top / Peek     | O(1)          |                                              |
 
-
 More "advanced" stacks may provide more operations to check whether the stack is empty, to get the top element but don't remove it from the stack `top()`, or to get the number of items currently in the stack.
 
 ---

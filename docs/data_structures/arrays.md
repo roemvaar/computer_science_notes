@@ -46,19 +46,6 @@ Members:
 | Insertion      | O(n)            |                                              |
 | Deletion       | O(n)            |                                              |
 
-<!-- Operations:
-
-* build(size) - create a fixed-size array
-* build(size, value) - create fixed-size array, initialize all positions with value
-* len() - returns n
-* traverse(): - output all elements of the array from pos 0 to size - 1
-* get_at(idx): - return xi (index i)
-* set_at(idx, value): add an element at the given index
-* get_first/last()
-* set_first/last(value) 
-* slicing (?)
--->
-
 ---
 
 ## **3. Strengths and Weaknesses**
