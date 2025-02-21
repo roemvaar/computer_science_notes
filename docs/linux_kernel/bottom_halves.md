@@ -77,3 +77,24 @@ Tasklets make more sense if the code is not finely threaded. A driver developer 
 If your deferred work needs to run in process context, your only choice of the three is work queues.
 
 Work queues are the easiest to use.
+
+## Latest and Greatest: The End of Tasklets
+
+As of February 2024, tasklets are not longer seen as a reliable bottom half mechanism and the [idea](https://lwn.net/Articles/960041/) is to remove them from the kernel source code.
+
+
+A common problem in kernel development is controlling *when* a specific task should be done. The kernel has a number of deferred-execution mechanisms designed to ensure that every task is handled at the right time. Tasklets is one of those mechanisms. Tasklets removal might happen in the near future.
+
+An interrupt needs to be handled as quickly as possible. Sleeping is not an option in interrupt context. Interrupt hanlders typically just make a note of what needs to be done, then arrange for the actual work to be done in another context.
+
+There are four deferred-work mechanisms: threaded interrupt handlers, workqueues, software interrupts, tasklets.
+
+Workqueues (added in 2.5) are a deferred-work mechanism. A driver can create a work item, containing a function pointer and some data, and submit it to a workqueue. At some future time, that function will be called with the provided data; again, this call will happen in **process context**. There are various types of workqueues with different performance characteristics, and subsystems can create their own private workqueues if need be.
+
+Tasklets like workqueues are a way to arrange for a function to be called at a future time. In this case, though, the tasklet function is called from a software interrupt, and it runs in atomic context. Tasklets have been around since the 2.3 development series.
+
+Threaded interrupt handlers and workqueues are seen as the preferred mechanisms for deferred work in modern kernel code, but the other APIs have proved hard to phase out. Tasklets, in particular, remain because they offer lower latency than workqueues which, since they must go through the CPU scheduler, can take longer to execute a deferred-work item.
+
+Tasklet API problem: the tasklet subsystem could end up writing to a structure that has been freed and allocated for another use, with predictably unpleasant consequences. A "one shot" tasklet variant was discarded. Instead, a workqueue that run in softirq context is a better solution.
+
+The result of the workqueue that runs in softirq is here: https://lwn.net/ml/linux-kernel/20240130091300.2968534-1-tj@kernel.org/. The patch series converts a number of tasklet users over to the new workqueue type, though, and the plan is clearly to convert the rest over time. That may take a while; there are well over 500 tasklet users in the kernel. Once that conversion is complete, though, it will be possible to run WQ_BH workqueues directly from a software interrupt and remove tasklet API entirely.

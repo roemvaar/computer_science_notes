@@ -92,3 +92,19 @@ Use virtual functions instead of a constructor in order to make a program more f
 ## Object Oriented Design
 
 ## Delegation vs inheritance
+
+## Object Oriented in C
+
+The Virtual Filesystem (VFS) in Unix is object-oriented. A family of data structures represents the common file model. These data structures are akin to objects. Because the kernel is programmed strictly in C, without the benefit of a language directly supporting object-oriented paradigms, the data structures are represented as C structures. The structures contain both data and pointers to filesystem-implemented functions that operate on the data.
+
+The four primary object types of the VFS are:
+
+* The **superblock** object
+
+* The **inode** object
+
+* The **dentry** object
+
+* The **file** object
+
+People often miss this, or even deny it, but there are many examples of object-oriented programming in the kernel. Although the kernel developers may shun C++ and other explicitly object-oriented languages, thinking in terms of objects is often useful. The VFS is a good example of how to do clean and efficient OOP in C, which is a language that lacks any OOP constructs.
