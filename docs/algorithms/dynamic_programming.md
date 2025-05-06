@@ -47,6 +47,12 @@ A common algorithm design tactic is to divide a problem into sub-problems of the
 * **Tabulation** (Bottom-Up DP)
 * **Bottom-Up No-Memory DP**
 
+Algorithm:
+
+1. Find patterns in DP problems that I can use to construct a DP array
+2. After that, find an algorithm to fill the array and implement it
+3. Sometimes, the array isn't even needed and can just be replaced with some variables
+
 <!-- https://www.instagram.com/reel/DGI74QDsLpY/?utm_source=ig_web_copy_link -->
 
 ---
