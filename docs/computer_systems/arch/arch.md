@@ -72,11 +72,54 @@ A **data stall** occurs when an instruction is delayed because it depends on the
 
 A **control stall** is a delay in the instruction pipeline that occurs when a control hazard prevents the next instruction from executing on time. Control hazards happen when a decision needs to be made about a conditional branch before the condition or target can be calculated.
 
-## Very Long Instruction Word (VLIW)
+# Very Long Instruction Word (VLIW)
 
-## Superscalar Processor
+A **VLIW processor** executes multiple operations in parallel using a single wide instruction.
 
-## Program Status Register
+- The **compiler** determines which instructions can run in parallel.
+- Hardware is simpler (no dynamic scheduling).
+- Requires strong compiler optimization.
+
+**Pros**
+- Lower hardware complexity
+- Predictable timing
+- Good for DSP/embedded
+
+**Cons**
+- Compiler-dependent
+- Poor binary portability
+- May waste slots if parallelism is low
+
+
+# Superscalar Processor
+
+A **superscalar processor** can issue multiple instructions per clock cycle dynamically.
+
+- The **hardware** detects instruction-level parallelism (ILP).
+- May support out-of-order execution.
+- Uses register renaming and dependency checking.
+
+**Pros**
+- High general-purpose performance
+- No compiler dependency for parallelism
+
+**Cons**
+- Complex hardware
+- Higher power and area
+
+
+# Program Status Register (PSR)
+
+The **Program Status Register** stores the processor’s current state.
+
+## Contains:
+- **Condition flags**: N (Negative), Z (Zero), C (Carry), V (Overflow)
+- **Control bits**: interrupt enable, privilege level, execution state
+
+## Why it matters:
+- Used for conditional branching
+- Saved/restored during interrupts
+- Essential for context switching in OS/RTOS
 
 ## Big Endian vs Little Endian
 
