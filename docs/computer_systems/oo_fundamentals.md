@@ -75,7 +75,15 @@ they are implemented through storage or through computation.
 
 ## Encapsulation
 
+Encapsulation is the practice of **bundling data and the methods that operate on that data into a single unit**, typically a class. It also restricts direct access to the internal state of an object, allowing it to be accessed or modified only through well-defined methods.
+
+By hiding internal implementation details and exposing only a controlled interface, encapsulation helps protect data integrity, reduce unintended interactions, and improve modularity in software systems.
+
 ## Data Abstraction
+
+Data abstraction is the concept of **exposing only the essential features of an object while hiding the underlying implementation details**. This allows users of the object to interact with it at a high level without needing to understand how it is internally implemented.
+
+In object-oriented programming, abstraction focuses on **what an object does rather than how it does it**, simplifying complex systems and making programs easier to design, maintain, and extend.
 
 ## Frequently Asked Questions
 
