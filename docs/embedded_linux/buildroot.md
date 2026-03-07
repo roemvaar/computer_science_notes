@@ -9,11 +9,11 @@ nav_order: 1
 
 Official website: [Buildroot](https://buildroot.org/).
 
-Buildroot is a **build system for creating complete embedded Linux systems**. It automates the process of generating all the components required to run Linux on an embedded device. :contentReference[oaicite:0]{index=0}  
+Buildroot is a **build system for creating complete embedded Linux systems**. It automates the process of generating all the components required to run Linux on an embedded device.
 
-Buildroot uses **cross-compilation** to build software for a target architecture (e.g., ARM or RISC-V) from a development machine. :contentReference[oaicite:1]{index=1}  
+Buildroot uses **cross-compilation** to build software for a target architecture (e.g., ARM or RISC-V) from a development machine.
 
-Using a configuration system based on **Kconfig** (similar to the Linux kernel), developers can select packages and system options through a menu interface and automatically generate a customized Linux system. :contentReference[oaicite:2]{index=2}  
+Using a configuration system based on **Kconfig** (similar to the Linux kernel), developers can select packages and system options through a menu interface and automatically generate a customized Linux system.
 
 ## What Buildroot Generates
 
@@ -25,7 +25,7 @@ Buildroot can automatically build:
 - Root filesystem  
 - Userspace applications and libraries  
 
-These components together produce a **bootable Linux image for an embedded device**. :contentReference[oaicite:3]{index=3}  
+These components together produce a **bootable Linux image for an embedded device**.
 
 ## Key Characteristics
 
@@ -35,7 +35,7 @@ These components together produce a **bootable Linux image for an embedded devic
 - Fast image generation
 - Supports many architectures (ARM, x86, MIPS, PowerPC, RISC-V)
 
-Buildroot is commonly used to generate firmware for embedded devices such as routers, IoT systems, and single-board computers. :contentReference[oaicite:4]{index=4}  
+Buildroot is commonly used to generate firmware for embedded devices such as routers, IoT systems, and single-board computers.
 
 ## Basic Workflow
 
