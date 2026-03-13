@@ -7,12 +7,6 @@ nav_order: 1
 
 # C Programming Language
 
-## Must know concepts
-
-```
-* Pointers
-```
-
 ## C Data Types
 
 * char, short, int, float, double
