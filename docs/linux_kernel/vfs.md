@@ -47,7 +47,53 @@ Each mount point is represented by the **vfsmount** structure. This structure co
 
 Two per-process structures describe the filesystem and files associated with a process. They are, respectively, the **fs_struct** structure and the **file** structure.
 
-## procfs and sysfs
+
+## procfs vs sysfs
+
+## procfs (Process File System)
+
+**procfs** is a virtual filesystem that exposes process and kernel runtime information.
+
+- **Mount point:** `/proc`
+- **Focus:** Processes + system state
+- **Created dynamically by the kernel**
+
+### Examples
+
+- `/proc/cpuinfo`
+- `/proc/meminfo`
+- `/proc/<pid>/`
+
+### Key Idea
+
+Used to inspect running processes and overall system status.
+
+---
+
+## sysfs (System File System)
+
+**sysfs** is a virtual filesystem that exposes the Linux device and driver model.
+
+- **Mount point:** `/sys`
+- **Focus:** Devices + drivers
+- **Introduced in Linux 2.6**
+
+### Examples
+- `/sys/class/`
+- `/sys/devices/`
+- `/sys/bus/`
+
+### Key Idea
+
+Used to represent hardware and kernel objects in a structured way.
+
+---
+
+## Quick Difference
+
+- **procfs →** Process and kernel state  
+- **sysfs →** Devices and driver model
+
 
 ## What are the main files systems supported by the Linux kernel?
 

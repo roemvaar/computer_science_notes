@@ -74,17 +74,67 @@ In the end, you are going to converge toward a goal. Our goal is to reach the ba
 
 ## **6. Common Mistakes**
 
-* Pitfalls to avoid when implementing or using the algorithm.
+* Pitfalls to avoid when implementing or using backtracking:
+
+- **Forgetting to undo choices (backtrack step):**  
+  Not reverting state (e.g., removing elements from a path or unmarking visited nodes) leads to incorrect results.
+
+- **Modifying shared state incorrectly:**  
+  Using the same list/reference across recursive calls without copying or restoring it properly.
+
+- **Missing base cases:**  
+  Not defining clear termination conditions can cause infinite recursion or incomplete solutions.
+
+- **Inefficient pruning:**  
+  Failing to prune invalid paths early results in exponential blow-up and timeouts.
+
+- **Redundant computations:**  
+  Exploring duplicate states (e.g., permutations with repeated elements) without handling duplicates.
+
+- **Incorrect recursion tree design:**  
+  Poor choice of decision space (e.g., wrong loop bounds or recursion depth).
+
+- **Not using proper constraints:**  
+  Ignoring problem constraints (like sorted input or bounds) that could simplify pruning.
+
+- **Stack overflow (deep recursion):**  
+  Especially in large input sizes without optimization.
 
 ---
 
 ## **7. Must-Study Problems**
 
-* A list of highly recommended LeetCode/other platform problems to practice.
-  * Include problem names, categories, and difficulty levels (Easy, Medium, Hard).
-* **[Problem 1]():** Brief description of the problem and why it's important.
-* **[Problem 2]():** Another key problem and how it tests your understanding.  
-* Organize problems into categories if needed (e.g., traversal, searching, etc.).
+* Key problems to master backtracking:
+
+### **Core Patterns**
+- **[Subsets](https://leetcode.com/problems/subsets/):**  
+  *Category:* Combinations | *Difficulty:* Medium  
+  Inclusion/exclusion template (foundation of backtracking).
+
+- **[Permutations](https://leetcode.com/problems/permutations/):**  
+  *Category:* Permutations | *Difficulty:* Medium  
+  Teaches element selection and state tracking.
+
+### **Constraints / Pruning**
+- **[Combination Sum](https://leetcode.com/problems/combination-sum/):**  
+  *Category:* Constraint Satisfaction | *Difficulty:* Medium  
+  Introduces pruning and reuse decisions.
+
+### **Grid / DFS**
+- **[Word Search](https://leetcode.com/problems/word-search/):**  
+  *Category:* Grid Traversal | *Difficulty:* Medium  
+  Combines DFS with backtracking.
+
+### **Classic Hard**
+- **[N-Queens](https://leetcode.com/problems/n-queens/):**  
+  *Category:* Constraint Satisfaction | *Difficulty:* Hard  
+  Strong pruning and constraint handling.
+
+### **[Problem 1](https://leetcode.com/problems/subsets/): Subsets**
+Core backtracking pattern (include/exclude). Must-know template.
+
+### **[Problem 2](https://leetcode.com/problems/n-queens/): N-Queens**
+Classic constraint problem. Tests pruning and optimization.
 
 ---
 
