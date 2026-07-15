@@ -27,6 +27,13 @@ A common algorithm design tactic is to divide a problem into sub-problems of the
 
 ## **2. Key Concepts**
 
+For dynamic programming, you are going to be doing one of the following:
+
+    1. Naive Recursive
+    2. Top-Down DP - Memoization (recursion with cache)
+    3. Bottom-Up DP - Tabulation (fill up a table or array using loops) 
+    4. Constant Space Bottom Up DP (like 3, but don't use a table)
+
 ---
 
 ## **3. Applications**
