@@ -128,7 +128,3 @@ Evaluate your specific needs using:
 * Will bottlenecks require NVLink?
 
     **Which architecture perfectly matches your workload?**
-
-## Useful Resources
-
-* **YouTube Tutorial**: [GPU Devices for Beginners: Core Concepts, Key Vocabulary, Architecture, Performance & Buying Guide](https://www.youtube.com/playlist?list=PLPGET2kMfJQ7q0WE8SYyVUxV4lg1Pvs5J)
