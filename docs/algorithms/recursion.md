@@ -15,7 +15,7 @@ Most computer programming languages support recursion by allowing a function to 
 
 ### Base Case
 
-A recursive function definition has one or more base cases, meaning inputs for which the function produces a result trivially (without recurring), and one or more recursive case, meaning inputs for which the program recurs (calls itself).
+A recursive function definition has one or more base cases, meaning inputs for which the function produces a result trivially (without recurring), and one or more recursive cases, meaning inputs for which the program recurs (calls itself).
 
 The job of the recursive cases can be seen as breaking down complex inputs into simpler ones. In a properly designed recursive function, with each recursive call, the input problem must be simplified in such a way that eventually the base case must be reached. Neglecting to write a base case, or testing for it incorrectly, can cause an infinite loop.
 

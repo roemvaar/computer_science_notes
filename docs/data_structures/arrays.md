@@ -9,7 +9,7 @@ nav_order: 1
 
 ## **1. Overview**
 
-An array (or static array) is a data structure consisting of a collection of elements (values), of same data type, each identified by at least one array index. Arrays are used as the basis for most other data structures. The elements are stored in neighboring (contiguous) memory locations. Arrays can hold up to N elements.
+An array (or static array) is a data structure consisting of a collection of elements (values), of the same data type, each identified by at least one array index. Arrays are used as the basis for most other data structures. The elements are stored in neighboring (contiguous) memory locations. Arrays can hold up to N elements.
 
 Arrays are fixed in C and C++. The size of the array is defined when you create the array.
 
@@ -52,7 +52,7 @@ Members:
 
 | **Strengths**                | **Weaknesses**               |
 |------------------------------|------------------------------|
-| Direct access to any element |  Contiguos memory block      |
+| Direct access to any element |  Contiguous memory block      |
 | Modifying an element takes O(1) | You need to shift the elements if you want to insert or delete |
 
 ---

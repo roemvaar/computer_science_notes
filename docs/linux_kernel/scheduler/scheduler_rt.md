@@ -11,7 +11,7 @@ nav_order: 1
 
 Linux provides two real-time scheduling policies, SCHED_FIFO and SCHED_RR. The normal, not real-time scheduling policy is SCHED_NORMAL (CFS). Via the **scheduling classes** framework, these real-time policies are managed not by the CFS, but by a special real-time scheduler, defined in [/kernel/sched/rt.c](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/rt.c).
 
-SHED_FIFO implements a simple first-in, first-out scheduling algorithm without timeslices. SCHED_RR is identical to SCHED_FIFO except that each process can run only until it exhausts a predetermined timeslice. It is a real-time, round-robin scheduling algorithm.
+SCHED_FIFO implements a simple first-in, first-out scheduling algorithm without timeslices. SCHED_RR is identical to SCHED_FIFO except that each process can run only until it exhausts a predetermined timeslice. It is a real-time, round-robin scheduling algorithm.
 
 Both real-time scheduling policies implement static priorities. This ensures that a real-time process at a given priority always preempts a process at a lower priority.
 

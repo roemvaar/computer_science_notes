@@ -8,7 +8,7 @@ permalink: /docs/linux_kernel
 
 # Linux Kernel
 
-Linux is an OS (comercial) and just the kernel (technical).
+Linux is an OS (commercial) and just the kernel (technical).
 
 ## What is the Linux kernel, and what is its purpose?
 
@@ -22,7 +22,7 @@ The kernel is a large, standalone program with detailed and explicit requirement
 
 Every software package used in a Linux system has its release number, and there are often interdependencies across them.
 
-Linux system consists of kernel, C library, toolchain, basic system utilities (e.g.,
+A Linux system consists of kernel, C library, toolchain, basic system utilities (e.g.,
 init and bash). In Linux, there is a strong separation between user space and kernel
 space. The Linux kernel has a monolithic design, unlike QNX that has a microkernel
 design.

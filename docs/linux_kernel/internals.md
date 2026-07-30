@@ -11,7 +11,7 @@ nav_order: 1
 
 The Linux kernel is a fully preemptive kernel. In nonpreemptive kernels, kernel code runs until completion. That is, the scheduler cannot reschedule a task while it is in the kernel. In Linux, it is possible to preempt a task at any point, so long as the kernel is in a state in which it is safe to reschedule.
 
-When is it safe to reschedule? The kernel can preempt a task running in the kernel so long as it does not hold a lock. That is, locks are used as markers of regions of nonpreemptability. Kernel is SMP-safe.
+When is it safe to reschedule? The kernel can preempt a task running in the kernel so long as it does not hold a lock. That is, locks are used as markers of regions of nonpreemptability. The kernel is SMP-safe.
 
 Kernel preemption can also occur explicitly, when a task in the kernel blocks or explicitly calls `schedule()`.
 

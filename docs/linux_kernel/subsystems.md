@@ -8,7 +8,7 @@ nav_order: 1
 # Subsystems
 
 Here is a list of the Linux kernel subsystems that I'm most
-interested on:
+interested in:
 
 * Scheduler (core)
     * Real-Time

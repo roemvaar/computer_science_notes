@@ -9,7 +9,7 @@ nav_order: 1
 
 ## **1. Overview**
 
-A tree is a data structure composed of nodes. Each tree has a root node. The root node has zero or more childs. Each child node has zero or more child nodes. The tree cannot contain cycles.
+A tree is a data structure composed of nodes. Each tree has a root node. The root node has zero or more children. Each child node has zero or more child nodes. The tree cannot contain cycles.
 
 * **Use Cases:** 
   * Git Trees: git uses trees to keep track of commits, branches, and BLOBS.

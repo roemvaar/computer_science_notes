@@ -23,7 +23,7 @@ nav_order: 1
 
 * Not typically used as a general-purpose computing platform.
 
-* General has application software built in, not user-selected.
+* Generally has application software built in, not user-selected.
 
 * Ships with all intended application hardware and software pre-integrated.
 
@@ -45,9 +45,9 @@ The ones most often found in embedded devices are Arm, MIPS, PowerPC, RISC-V, an
 
 **Bootloaders**
 
-A bootloader is a program in charge of initializing critical computer resources, such as program memory, and loading the OS into the memory. It serves as a bridge between the firmware and the operating system, ensuring th system is properly configured to begin execution of higher-level software.
+A bootloader is a program in charge of initializing critical computer resources, such as program memory, and loading the OS into the memory. It serves as a bridge between the firmware and the operating system, ensuring the system is properly configured to begin execution of higher-level software.
 
-How does the bootloader loads the OS/Program?
+How does the bootloader load the OS/Program?
 
 1. Power-On / Reset: after the system is powered on or reset, the processor starts executing code from a predefined memory location, usually set by the hardware.
 
@@ -116,7 +116,7 @@ Difference between an OS and RTOS:
 Examples: FreeRTOS, QNX, VxWorks
 **What is DMA?**
 
-Direct Memory Acess
+Direct Memory Access
 
 **Timers**
 
@@ -148,7 +148,7 @@ There are some common build systems, including the following:
 
 * CMake (https://cmake.org)
 
-Autotools and makefiles are needed to build a basic embedded Linux system. CMake is cross-plaform.
+Autotools and makefiles are needed to build a basic embedded Linux system. CMake is cross-platform.
 
 **Schematic basics** 
 

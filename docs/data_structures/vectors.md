@@ -13,7 +13,7 @@ A vector is an array that resizes itself as needed while still providing O(1) ac
 
 Arrays are fixed in C and C++, when you need an array-like data structure that offers dynamic resizing, you would use a `std::vector` in C++. Dynamic arrays are called `lists` in Python.
 
-Dynamic arrays are implemented using static arrays under the hood. The dynamic array starts just like a regular static array, and once that it's full and you need to insert a new element at the end of the array, the runtime allocates a new static array that is (usually) double the size of the original static array, then copies the elements of the original elements into the new array. This only happens when the array is full.
+Dynamic arrays are implemented using static arrays under the hood. The dynamic array starts just like a regular static array, and once it's full and you need to insert a new element at the end of the array, the runtime allocates a new static array that is (usually) double the size of the original static array, then copies the elements of the original array into the new array. This only happens when the array is full.
 
 A typical implementation of vectors is that when the array is full, the array doubles in size. Each doubling takes O(n) time, but happens so rarely that its amortized insertion time is O(1).
 

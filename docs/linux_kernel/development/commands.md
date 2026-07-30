@@ -58,7 +58,7 @@ arm-linux-gnueabi-readelf -a hello_world | grep "program interpreter"
 gcc -static hello_world.c -o hello_world-static
 ```
 
-### Create static library (as simple as creating an archive of objects files using the ar command). Example: If you have two source files "test1.c" and "test2.c", and you want to create a static library named "libtest.a", then:
+### Create static library (as simple as creating an archive of object files using the ar command). Example: If you have two source files "test1.c" and "test2.c", and you want to create a static library named "libtest.a", then:
 
 ```bash
 gcc -c test1.c
@@ -66,7 +66,7 @@ gcc -c test2.c
 ar rc libtest.a test1.o test2.o
 ```
 
-Note: gcc -c option compile and assemble the translation unit, but do not link
+Note: gcc -c option compiles and assembles the translation unit, but does not link
 
 ### Link statically compiled library "libtest.a" into "hello_world" program:
 

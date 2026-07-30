@@ -40,7 +40,7 @@ permalink: /docs/references
 
 * [Linux] **Documentation**: Linux Docs – https://docs.kernel.org/
 
-* [LKD] **Book**: *Linux Kernel Development (3rd Edition)* by Roberto Love
+* [LKD] **Book**: *Linux Kernel Development (3rd Edition)* by Robert Love
 
 * [RBIM] **Forum Answer**: Removing Built-In Modules in Linux on Unix Stack Exchange – https://unix.stackexchange.com/questions/61917/removing-builtin-modules-in-linux/61918#61918
 

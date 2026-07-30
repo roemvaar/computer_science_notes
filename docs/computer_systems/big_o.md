@@ -41,14 +41,14 @@ Many people confuse O(1) with "doing only one thing", but they are not the same 
 log<sub>2</sub>N = k -> 2<sup>k</sup> = N
 
 When you see a problem where the number of elements in the problem space gets halved each time, that will likely
-be a O(log N) runtime.
+be an O(log N) runtime.
 
 This halving is why finding an element in a balanced binary search tree is O(log N). With each comparison, we
 go either left or right. Half the nodes are on each side, so we cut the problem space in half each time.
 
 ## Linear - O(n)
 
-You are given an array `A = [1,2,3,4,5]` and you have to write a function that returns the squares of the array `A`. To solve this, we need to create an array `B` that will contain the squares of the input. We start at the element `A[0]` and square it and store it in `B[0]`, next we square `A[1]` and store it in `B[1]`, all the way to the last element of input array `A`. In other words, we need to iterate all the input array an calculate, i.e., the time that our algorithm will take is proportional to the number of elements `N` in the input array. Hence, our algorithm is `O(N)`.
+You are given an array `A = [1,2,3,4,5]` and you have to write a function that returns the squares of the array `A`. To solve this, we need to create an array `B` that will contain the squares of the input. We start at the element `A[0]` and square it and store it in `B[0]`, next we square `A[1]` and store it in `B[1]`, all the way to the last element of input array `A`. In other words, we need to iterate all the input array and calculate, i.e., the time that our algorithm will take is proportional to the number of elements `N` in the input array. Hence, our algorithm is `O(N)`.
 
 ## Log-Linear - O(nlog(n))
 
@@ -56,7 +56,7 @@ You are given an array `A = [1,2,3,4,5]` and you have to write a function that r
 
 If we want to generate all different pairs that we can form using an input array `A = [1,2,3,4,5]`, for each of the elements, we need to iterate the rest of the array, i.e., O(n<sup>2</sup>).
 
-## Polinomial - O(n<sup>c</sup>)
+## Polynomial - O(n<sup>c</sup>)
 
 ## Exponential - O(c<sup>n</sup>)
 

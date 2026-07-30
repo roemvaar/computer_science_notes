@@ -17,4 +17,4 @@ There are two major mechanisms to access data from I/O devices:
 
 * **Polling**: synchronous. Also known as busy waiting. Polling blocks other activities, high power consumption, predictable timing, and high throughput.
 
-* **Interrupts**: asyncrhonous operation. The CPU can do other activities while waiting for data to complete, non-linear control flow (source of bugs), requires prioritization, and bugs are hard to reproduce.
+* **Interrupts**: asynchronous operation. The CPU can do other activities while waiting for data to complete, non-linear control flow (source of bugs), requires prioritization, and bugs are hard to reproduce.

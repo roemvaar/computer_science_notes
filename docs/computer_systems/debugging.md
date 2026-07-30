@@ -99,7 +99,7 @@ System debugging
 
 5. **Check the plug**: check that all the connections are correct.
 
-6. **Separate facts from interpretetion**: revisit the processor specification; recheck some of your assumed knowledge.
+6. **Separate facts from interpretation**: revisit the processor specification; recheck some of your assumed knowledge.
 
 7. **Divide and conquer**: reduce the test case, test one assumption after the other.
 

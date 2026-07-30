@@ -15,7 +15,7 @@ Options:
 * QEMU
 * Dedicated Laptop/PC for development
 * Raspberry Pi
-* Specialiazed hardware for your specific development -->
+* Specialized hardware for your specific development -->
 
 ## Linux Kernel Hacking
 
@@ -70,7 +70,7 @@ sudo losetup -f --show --partscan qemu.img
 
 Detailed instructions [here](https://bootlin.com/doc/training/embedded-linux-qemu/embedded-linux-qemu-labs.pdf).
 
-Is there other process using the image?
+Is there another process using the image?
 
 ```bash
 qemu-system-x86_64 -kernel arch/x86/boot/bzImage -drive file=../qemu-image.img,index=0,media=disk,format=raw -append "root=/dev/sda console=ttyS0" --enable-kvm --nographic

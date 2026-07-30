@@ -9,11 +9,11 @@ nav_order: 1
 
 ## **1. Overview**
 
-**Depth-First Search (DFS)** is a tree and graph traversal algorithm. DFS visit all the nodes in a tree or a graph.
+**Depth-First Search (DFS)** is a tree and graph traversal algorithm. DFS visits all the nodes in a tree or a graph.
 
 A DFS follows one tree branch down as many levels as possible until the target node is found or the end is reached.
 
-When the search can't go down any further, it is continued at the the nearest ancestor with unexplored children.
+When the search can't go down any further, it is continued at the nearest ancestor with unexplored children.
 
 ![bfs_dfs](../../assets/img/bfs_dfs.png)
 
@@ -39,7 +39,7 @@ In DFS, we start at the root (or another arbitrarily selected node) and explore 
 
 ## **4. Implementation**
 
-In DFS, we visit a node a and then iterate through each of a's neighbours. When visiting a node b that is a neighbour of a, we visit all of b's neighbours before going on to a's other neighbours. That is exhaustively searches b's branch before any of its other neighbours.
+In DFS, we visit a node a and then iterate through each of a's neighbours. When visiting a node b that is a neighbour of a, we visit all of b's neighbours before going on to a's other neighbours. That is, it exhaustively searches b's branch before any of its other neighbours.
 
 The pseudocode below implements DFS:
 

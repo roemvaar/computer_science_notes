@@ -13,7 +13,7 @@ Historically, Unix has provided four basic filesystem-related abstractions: **fi
 
 A **filesystem** is a hierarchical storage of data adhering to a specific structure. A filesystem type determines how information is organized on a device to represent a tree of directories and files. Filesystems contain files, directories, and associated control information. Typical operations performed on filesystems are creation, deletion, and mounting.
 
-In Unix, filesystems are mounted at a specific mount point in a global hierarchy known as a **namespace**. This enables all mounted filesystems to appear as entries in a single tree. Windows break the file namespace up into drive letters, such as `C:`. This breaks the namespace and leaks hardware details into the filesystem abstraction.
+In Unix, filesystems are mounted at a specific mount point in a global hierarchy known as a **namespace**. This enables all mounted filesystems to appear as entries in a single tree. Windows breaks the file namespace up into drive letters, such as `C:`. This breaks the namespace and leaks hardware details into the filesystem abstraction.
 
 A **file** is an ordered string of bytes. Each file has a human-readable name for identification by both the system and the user. Typical file operations are read, write, create, and delete.
 
@@ -21,9 +21,9 @@ Files are organized in directories. A **directory** is analogous to a folder and
 
 Unix systems separate the concept of a file from any associated information about it, such as access permissions, size, owner, creation time, and so on. This information is sometimes called **file metadata** (that is, data about the file's data) and is stored in a separate data structure from the file, called the **inode**.
 
-All this information is tied together with the filesystem's own control information, which is stored in the **superblock** (filesystem metadata). The superblock is a data structure containing information about the filesystem as whole (individual files and the filesystem as a whole).
+All this information is tied together with the filesystem's own control information, which is stored in the **superblock** (filesystem metadata). The superblock is a data structure containing information about the filesystem as a whole (individual files and the filesystem as a whole).
 
-Traditionally, Unix filesystems implement these notions as part of their physical disk layout. Non-Unix filesystems, such as FAT, still work in Linux, but their filesystem code must provide the apperance of these concepts with processing done on-the-fly.
+Traditionally, Unix filesystems implement these notions as part of their physical disk layout. Non-Unix filesystems, such as FAT, still work in Linux, but their filesystem code must provide the appearance of these concepts with processing done on-the-fly.
 
 ## VFS Objects and Their Data Structures
 
@@ -35,9 +35,9 @@ The four primary object types of the VFS are:
 
 * The **inode** object, which represents a specific file.
 
-* The **denetry** object, which represents a directoy entry, which is a single component of a path.
+* The **dentry** object, which represents a directory entry, which is a single component of a path.
 
-* The **file** object, which represents an open file as associate with a process.
+* The **file** object, which represents an open file as associated with a process.
 
 An **operations** object is contained within each of these primary objects. These objects describe the methods that the kernel invokes against the primary objects. The operations objects are implemented as a structure of pointers to functions that operate on the parent object.
 
@@ -95,7 +95,7 @@ Used to represent hardware and kernel objects in a structured way.
 - **sysfs →** Devices and driver model
 
 
-## What are the main files systems supported by the Linux kernel?
+## What are the main file systems supported by the Linux kernel?
 
 * ext4 file system: provides journaling and support for large file sizes and partitions.
 

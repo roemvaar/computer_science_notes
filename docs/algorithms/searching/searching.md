@@ -31,11 +31,11 @@ items to realize it's not there.
 O(log(n))
 ```
 
-The items must be in a sorted array. Each step of binary_search does a constant number of operations and discard half the input.
+The items must be in a sorted array. Each step of binary_search does a constant number of operations and discards half the input.
 
 ![binsearch](../../assets/img/binsearch.png)
 
-binary search can be implemented recursively and iteratively.
+Binary search can be implemented recursively and iteratively.
 
 ## Search using a Hash Table
 

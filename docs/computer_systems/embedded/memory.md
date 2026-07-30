@@ -109,7 +109,7 @@ Virtual memory is enabled by memory address translation.
 
 Memory address translation provides a layer of indirection to enable additional functionality where the address a program tries to access is not the same as the physical address in memory where this data is located.
 
-When a program tries to access an address a particular address, that doesn't mean that it will find it at that specific address; instead, thanks to virtual memory, there's a layer of indirection between these two addresses.
+When a program tries to access a particular address, that doesn't mean that it will find it at that specific address; instead, thanks to virtual memory, there's a layer of indirection between these two addresses.
 
 Uses of virtual memory:
 

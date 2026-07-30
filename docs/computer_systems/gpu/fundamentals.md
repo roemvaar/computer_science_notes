@@ -13,7 +13,7 @@ From CPU to GPU.
 
 * CPU: Few powerful cores acting as a highly skilled manager.
 
-* GPU: Thousands of smaller cores acting as a massive factory. This millions of workers doing
+* GPU: Thousands of smaller cores acting as a massive factory. These millions of workers doing
 mathematical operations in parallel match perfectly with AI workloads.
 
 1. **Foundation**
@@ -22,7 +22,7 @@ Architecture: the underlying computational (blueprint) design family, such as Nv
 Blackwell.
 
     * Hopper (H100): the industry standard for massive AI training, delivering robust floating-point (FP8)
-    performance and a poweful Transformer Enginer.
+    performance and a powerful Transformer Engine.
 
 Product Family: the target application and packaging, such as GeForce for consumers or Data Center.
 
@@ -88,7 +88,7 @@ What happens when your model is too big for your GPU? This is where interconnect
 
 PCIe is general-purpose, pushing traffic through the host CPU.
 
-NVLInk is a specialized, low-latency bridge for GPU-to-GPU transfer. NVIDIA NVLink is a proprietary
+NVLink is a specialized, low-latency bridge for GPU-to-GPU transfer. NVIDIA NVLink is a proprietary
 high-speed hardware interconnect technology that allows GPUs and CPUs to communicate with each other at
 speeds significantly faster than traditional PCIe connections. By bypassing the CPU-bound PCIe bottleneck,
 NVLink enables peer-to-peer data sharing, uniform memory pools, and massively accelerated AI training and

@@ -24,7 +24,7 @@ nav_order: 1
 
 Figure 1. Simple Syscalls
 
-* How do we detect crashes (or other kind of bugs)?
+* How do we detect crashes (or other kinds of bugs)?
     * Detecting bugs
         * Use dynamic bug detectors: KASAN, KMSAN, and KCSAN.
         * Write your detectors: checks for logical bugs and assertions.
@@ -37,7 +37,7 @@ Figure 1. Simple Syscalls
 
 ## Linux Kernel Fuzzers
 
-* Trinity: find less bugs, easier to deploy, simpler fuzzer
+* Trinity: finds fewer bugs, easier to deploy, simpler fuzzer
 * Syzkaller: goes deeper, finds more bugs, easier to extend
 
 ### Syzkaller
@@ -67,7 +67,7 @@ Figure 1. Simple Syscalls
     * Fuzz distro kernels
 
 * Tip #2: Build your fuzzer on top of Syzkaller
-    * Specific fuzzer for USB and KVM build on top Syzkaller
+    * Specific fuzzer for USB and KVM built on top of Syzkaller
 
 * Tip #3: Use syzkaller as a framework
     * Only use crash parsing code

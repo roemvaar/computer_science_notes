@@ -17,7 +17,7 @@ CPUs were designed to run ONE extremely complicated computation at a time sequen
 
     * Few powerful ALUs. Fast 3-4 GHz speeds. Large caches.
 
-AI workload need to calculate millions simple math problems, all at the exact same time.
+AI workloads need to calculate millions of simple math problems, all at the exact same time.
 
     * Thousands of small ALUs. 1.2 GHz speeds. Small caches.
 
@@ -46,20 +46,20 @@ RTX 3090 (consumer) vs A100 (servers) paradox:
     * They both use the same underlying silicon die (GA100)
     * Tuned for different applications
 
-The A100 crushes in FP16 performance (~700% better than RTX 3090). Although the RTX 3090 card as more cores, higher clock speed, and more
+The A100 crushes in FP16 performance (~700% better than RTX 3090). Although the RTX 3090 card has more cores, higher clock speed, and more
 FP32 TFLOPS.
 
-    FP16 half precision format critical for training AI models.
+    FP16 half precision format is critical for training AI models.
 
-It all comes down to architectural sinergy, the A100 dominates AI because it features superior mixed precision
+It all comes down to architectural synergy: the A100 dominates AI because it features superior mixed precision
 optimization. The A100 has a greater bandwidth. Architecture, specialized cores, and massive memory pipeline
 are what win the game in data centers.
 
 4. **Scaling with NVLink**
 
-What happens when one ultra-power GPU is not enough. Physical connection becomes the biggest bottleneck.
+What happens when one ultra-powerful GPU is not enough? Physical connection becomes the biggest bottleneck.
 
-Multiple GPU need to share data, you need to use NVLink, a private, high-speed express lane.
+Multiple GPUs need to share data; you need to use NVLink, a private, high-speed express lane.
 
 **Scaling Clusters**
 
@@ -69,4 +69,4 @@ PCIe --> NVLink --> NVSwitch
     * NVLink: Direct sharing for a small cluster
     * NVSwitch: Massive scaling for huge GPU pools
 
-Is the future of GPUs, building faster cores or wider highways?
+Is the future of GPUs building faster cores or wider highways?

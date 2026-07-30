@@ -27,7 +27,7 @@ On real hardware, we can run only a single task at once. Thus, we introduce the 
 
 In CFS the virtual runtime is expressed and tracked via the per-task p->se.vruntime (nanosec-unit) value. This value represents how much CPU time the task has used. This way, it’s possible to accurately timestamp and measure the “expected CPU time” a task should have gotten.
 
-The vruntime is incremented based on the actual time a task runs, but tasks with lower priority (i.e.,nice values) will have their runtime increased faster, so higher priority tasks (with lower nice values) get more CPU time.
+The vruntime is incremented based on the actual time a task runs, but tasks with lower priority (i.e., nice values) will have their runtime increased faster, so higher priority tasks (with lower nice values) get more CPU time.
 
 ## Process Selection
 
@@ -43,15 +43,15 @@ Tasks are stored in a time-ordered (sorted based on their vruntime) rbtree to bu
 
 This ensures that tasks that have not had a chance to run for a while are favored to get scheduled soon, ensuring fairness.
 
-CFS’s process selection algorithm is thus summed up as “run the process represented by the leftmost node in the rbtree.
+CFS’s process selection algorithm is thus summed up as “run the process represented by the leftmost node in the rbtree.”
 
 ## Process Selection
 
 ### Red-Black Tree (rbtree)
 
-Let’s start with the assumption that we have a red-black tree populated with every runnable process in the system where the key for each node is the runnable process’s virtual runtime. Given this tree, the process that CFS wants to run next, which is the process with the smallest vruntime, is the **leftmost node in the tree**. That is, if you follow the three from the root down through the left child, and continue moving to the left until you reach a leaf node, you find the process with the smallest vruntime. The process that performs this selection is [pick_next_entity()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/fair.c#L5472), defined in kernel/sched/fair.c. If the function returns NULL, there is no leftmost node, and thus no nodes in the tree. In that case, there are no runnable processes, and CFS schedules the idle task.
+Let’s start with the assumption that we have a red-black tree populated with every runnable process in the system where the key for each node is the runnable process’s virtual runtime. Given this tree, the process that CFS wants to run next, which is the process with the smallest vruntime, is the **leftmost node in the tree**. That is, if you follow the tree from the root down through the left child, and continue moving to the left until you reach a leaf node, you find the process with the smallest vruntime. The process that performs this selection is [pick_next_entity()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/fair.c#L5472), defined in kernel/sched/fair.c. If the function returns NULL, there is no leftmost node, and thus no nodes in the tree. In that case, there are no runnable processes, and CFS schedules the idle task.
 
-CFS adds processes to the rbtree and caches the leftmost node when a process becomes runnable (wake up) or is first created via `fork()`. Adding processes to the tree is performed by [enqueue_entity()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/fair.c#L5282), although this function is more for updating the runtime and statistics. The actual heavy lifting of inserting the entry into the red-black tree [__enqueue_entity()](https://elixir.bootlin.com/linux/v6.11/C/ident/__enqueue_entity).
+CFS adds processes to the rbtree and caches the leftmost node when a process becomes runnable (wake up) or is first created via `fork()`. Adding processes to the tree is performed by [enqueue_entity()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/fair.c#L5282), although this function is more for updating the runtime and statistics. The actual heavy lifting of inserting the entry into the red-black tree is handled by [__enqueue_entity()](https://elixir.bootlin.com/linux/v6.11/C/ident/__enqueue_entity).
 
 `dequeue_entity()` and `__dequeue_entity()` are used to remove a process from the red-black tree. This happens when a process blocks (becomes unrunnable) or terminates (ceases to exist).
 
@@ -61,17 +61,17 @@ The main entry point into the process schedule is the function [schedule()](http
 
 Schedule is generic with respect to scheduler classes. That is, it finds the highest priority scheduler class with a runnable process and asks it what it wants to run next.
 
-The most important part of `schedule()` is its invocation of [__pick_next_task()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/core.c#L5798), this function goes through each scheduler class, starting with the highest priority, and selecting the highest priority process in the highest priority class. Because CFS is the scheduler class for normal process, and most systems run mostly normal processes, there is a small hack to quickly select the next CFS-provided process if the number of runnable processes is equal to the number of CFS runnable process (which suggests that all runnable processes are provided by CFS).
+The most important part of `schedule()` is its invocation of [__pick_next_task()](https://elixir.bootlin.com/linux/v6.11/source/kernel/sched/core.c#L5798), this function goes through each scheduler class, starting with the highest priority, and selecting the highest priority process in the highest priority class. Because CFS is the scheduler class for normal processes, and most systems run mostly normal processes, there is a small hack to quickly select the next CFS-provided process if the number of runnable processes is equal to the number of CFS runnable process (which suggests that all runnable processes are provided by CFS).
 
 ### Sleeping and Waking Up
 
-Tasks that are sleeping (blocked) are in a special non runnable state. A task sleeps for a number of reasons, but always while it is waiting for some event. Examples: file  I/O - for example, the task issued a `read()` request on a file, which needs to be read from disk. A task can also involuntarily go to sleep when it tries to obtain a contended semaphore in the kernel. Another example could be waiting for keyboard input.
+Tasks that are sleeping (blocked) are in a special non runnable state. A task sleeps for a number of reasons, but always while it is waiting for some event. Examples: file I/O - for example, the task issued a `read()` request on a file, which needs to be read from disk. A task can also involuntarily go to sleep when it tries to obtain a contended semaphore in the kernel. Another example could be waiting for keyboard input.
 
 Whatever the case, the kernel behavior is the same: the task marks itself as sleeping, puts itself on a wait queue, removes itself from the red-black tree of runnable, and calls schedule() to select a new process to execute.
 
 Waking back up is the inverse: The task is set as runnable, removed from the wait queue, and added back to the red-black tree.
 
-Two tasks are associated with sleeping, TASK_INTERRUPTABLE (wake up prematurely and respond to a signal if one is issued) and TASK_UNINTERRUPTABLE (ignore signals). Both types of sleeping tasks sit on a wait queue, waiting for an event to occur, and are not runnable.
+Two tasks are associated with sleeping, TASK_INTERRUPTIBLE (wake up prematurely and respond to a signal if one is issued) and TASK_UNINTERRUPTIBLE (ignore signals). Both types of sleeping tasks sit on a wait queue, waiting for an event to occur, and are not runnable.
 
 A wait queue is a simple list of processes waiting for an event to occur. It is important to implement sleeping and waking correctly, to avoid race conditions.
 

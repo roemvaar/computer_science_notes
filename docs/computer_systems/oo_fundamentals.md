@@ -27,7 +27,7 @@ nav_order: 1
 * Delegation
 ```
 
-"Knowing concepts like abstraction, inheritance, and polymorphism do not make you a good object oriented designer. A design guru thinks about how to create flexible designs that are maintainable and that can cope with change."
+"Knowing concepts like abstraction, inheritance, and polymorphism does not make you a good object-oriented designer. A design guru thinks about how to create flexible designs that are maintainable and that can cope with change."
 
 **OOP Principles:**
 
@@ -42,7 +42,7 @@ Both inheritance and polymorphism relate to duplicate code and encapsulation, so
 
 Once you've gotten your software to work like it's supposed to, flexibility becomes a big deal. What if the customer wants to add new properties or features to the app? If you've got tons of duplicate code or confusing inheritance structures in your app, making changes is going to be a pain. 
 
-By introducing principles like encapsulation and good class design into your code, it's easier to make these changes, and you application becomes a lot more flexible.
+By introducing principles like encapsulation and good class design into your code, it's easier to make these changes, and your application becomes a lot more flexible.
 
 ## Inheritance
 

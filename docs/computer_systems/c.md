@@ -13,7 +13,7 @@ nav_order: 1
 
 * user-defined (typedef): structs, unions, enums
 
-* C - Fixed-width integers types: C99 adds built-in fixed width integers - int8_t, uint8_t, int16_t, int32_t, int64_t, etc.
+* C - Fixed-width integer types: C99 adds built-in fixed width integers - int8_t, uint8_t, int16_t, int32_t, int64_t, etc.
 
 To use these fixed-width integers, you need to: `#include <stdint.h>`.
 
@@ -40,7 +40,7 @@ A null pointer is a pointer which points to nothing. Some uses of the null point
 To compile `hello.c`, the following steps need to be taken:
 
 1) Preprocessor: the preprocessor performs one or many of the following
-task on the translation unit (.c file):
+tasks on the translation unit (.c file):
 
 * Removes comments
 * Expands macros
@@ -54,7 +54,7 @@ The preprocessor also generates macro code and replaces symbolic constants defin
 
 Output: hello.i
 
-2) Compiler: compiling is the second step. It takes the preprocessor's output and generates assembly language, an intermediate human readable language specific to the target processor.
+2) Compiler: compiling is the second step. It takes the preprocessor's output and generates assembly language, an intermediate human-readable language specific to the target processor.
 
 Output: hello.s
 
@@ -87,7 +87,7 @@ Libraries are collections of precompiled functions that have been written to be 
 
 The C compiler (or, more exactly, the linker) needs to be told which libraries to search because, by default, it searches only the standard C library.
 
-A library filename always starts with lib. Then follow the part indicating what library this is (like c for the C library, or m for the mathematical library). The last part starts with a dot (.), and specifies the type of library:
+A library filename always starts with lib. Then follows the part indicating what library this is (like c for the C library, or m for the mathematical library). The last part starts with a dot (.), and specifies the type of library:
 
   - .a for static libraries
   - .so for shared libraries
@@ -97,14 +97,14 @@ When a program needs to use a function stored in the library, it includes a head
 the standard C runtime library are required.
 
   - **Static libraries**, also known as archives, conventionally have names that end with .a. Example,
-    /usr/lib/libc.a for the standard C library. You can create your own static libraries using ar (for archive) program 
-    and compiling functions separately with gcc -c. [Example of a static library](). For futher information how to
-    create a shared library check Introduction to Programming Linux book p.11. One disadvantage of static libraries is that
+    /usr/lib/libc.a for the standard C library. You can create your own static libraries using the ar (for archive) program 
+    and compiling functions separately with gcc -c. [Example of a static library](). For further information on how to
+    create a shared library, check the Introduction to Programming Linux book, p.11. One disadvantage of static libraries is that
     when you run many applications at the same time and they all use functions from the same library, you may end up with many
     copies of the same functions in memory and indeed many copies in the program files themselves. This can consume a large
     amount of valuable memory and disk space. Shared libraries can overcome this disadvantage.
 
-  - **Shared Libraries** have the so suffix, e.g., the shared version of the standard math library is /lib/libm.so. When a
+  - **Shared Libraries** have the .so suffix, e.g., the shared version of the standard math library is /lib/libm.so. When a
     program uses a shared library, it is linked in such a way that it doesn't contain function code itself, but references to
     shared code that will be made available at run time. When the resulting program is loaded into memory to be executed, the
     function references are resolved and calls are made to the shared library, which will be loaded into memory if needed. In
@@ -112,7 +112,7 @@ the standard C runtime library are required.
     just once on the disk. An additional benefit is that the shared library can be updated independently of the applications
     that rely on it.
 
-    In Linux, the program (dynamic loader) that takes care of loading shared libraries and resolving client program functions
+    In Linux, the program (dynamic loader) that takes care of loading shared libraries and resolving client program function
     references is called ld.so.
 
     You can verify which libraries have been linked in this or any other program by using the
@@ -133,7 +133,7 @@ The C library is not a single library file. It is composed of four main parts th
   - libpthread: Contains all the POSIX thread functions with names beginning with pthread_
   - librt: Has the real-time extensions to POSIX, including shared memory and asynchronous I/O
 
-The first one, libc, is always linked, in but the others have to be explicitly linked with the -l option.
+The first one, libc, is always linked in, but the others have to be explicitly linked with the -l option.
 
 ## main() arguments
 
@@ -143,7 +143,7 @@ When a Linux program written in C runs, it starts at the function main. For thes
 
 where argc is a count of the program arguments and argv is an array of character strings representing the arguments themselves.
 
-## How to start a C program withouth main() function?
+## How to start a C program without main() function?
 
 ## Macros
 
@@ -151,7 +151,7 @@ A macro is a fragment of code which has been given a name. Whenever the name is 
 
 ## Using macros vs constants, what's the difference?
 
-Macros are handled by the pre-processor - the pre-processor does text replacement in your source file, replacing all occurances of 'A' with the literal 8.
+Macros are handled by the pre-processor - the pre-processor does text replacement in your source file, replacing all occurrences of 'A' with the literal 8.
 
 Constants are handled by the compiler. They have the added benefit of type safety.
 
@@ -159,11 +159,11 @@ For the actual compiled code, with any modern compiler, there should be zero per
 
 ### Inline Functions
 
-Both C99 and GNU C support inline functions. An inline functions is, as its name suggests, inserted inline into each function call site. 
+Both C99 and GNU C support inline functions. An inline function is, as its name suggests, inserted inline into each function call site. 
 
 Developers use inline functions for small time-critical functions.
 
-Making large functions inline, specially those used more than once or that are not exceedingly time critical, is frowned upon.
+Making large functions inline, especially those used more than once or that are not exceedingly time-critical, is frowned upon.
 
 An inline function is declared when the keywords ```static``` and ```inline``` are used as part of the function definition. For example:
 
@@ -189,7 +189,7 @@ Where are (automatic) local variables stored in C?
 On the stack
 
 How can you run a program without main?
-How pointers know to which kind of data are they pointing to?
+How do pointers know which kind of data they are pointing to?
 
 What’s the size of an int, float, char?
 Machine-dependent

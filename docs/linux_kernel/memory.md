@@ -20,7 +20,7 @@ Before you can delve into the actual allocation interfaces you need to understan
 
 The kernel treats physical pages as the basic unit of memory management.
 
-Although the processor's smallest addresable unit is a byte or a word, the memory management unit (MMU, the hardware that manages memory and performs virtual to physical address translations) typically deals with pages.
+Although the processor's smallest addressable unit is a byte or a word, the memory management unit (MMU, the hardware that manages memory and performs virtual to physical address translations) typically deals with pages.
 
 Therefore, the MMU maintains the system's page tables with page-size granularity. In terms of virtual memory, pages are the smallest unit that matters.
 
@@ -56,10 +56,10 @@ The `virtual` field is the page's virtual address.
 
 The important point to understand is that the `page` structure is associated with physical pages, not virtual pages. The kernel uses this data structure to describe the associated physical page. The data structure's goal is to describe physical memory, not the data contained therein.
 
-The kernel uses this structure to keep track of all the pages in the system, because the kernel needs to know whether a page is free (that is, if the page is not allocated). If a page is not free, the kernel needs to know who owns the page. Possible owners include user-space process, dynamically allocated kernel data, static kernel code, the page cache, and so on.
+The kernel uses this structure to keep track of all the pages in the system, because the kernel needs to know whether a page is free (that is, if the page is not allocated). If a page is not free, the kernel needs to know who owns the page. Possible owners include user-space processes, dynamically allocated kernel data, static kernel code, the page cache, and so on.
 
-Developers are often surprised that an instance of this structure is allocated for each physical page in the system.They think,“What a lot of memory wasted!” Let’s look at just how bad (or good) the space consumption is from all these pages.Assume struct page consumes 40 bytes of memory, the system has 8KB physical pages, and the system has
-4GB of physical memory. In that case, there are about 524,288 pages and page structures on the system.The page structures consume 20MB: perhaps a surprisingly large number in absolute terms, but only a small fraction of a percent relative to the system’s 4GB—not too high a cost for managing all the system’s physical pages.
+Developers are often surprised that an instance of this structure is allocated for each physical page in the system. They think, “What a lot of memory wasted!” Let’s look at just how bad (or good) the space consumption is from all these pages. Assume struct page consumes 40 bytes of memory, the system has 8KB physical pages, and the system has
+4GB of physical memory. In that case, there are about 524,288 pages and page structures on the system. The page structures consume 20MB: perhaps a surprisingly large number in absolute terms, but only a small fraction of a percent relative to the system’s 4GB—not too high a cost for managing all the system’s physical pages.
 
 ## Zones
 
@@ -70,11 +70,11 @@ Linux has four primary memory zones:
 * ZONE_DMA - pages that can undergo DMA
 * ZONE_DMA32 - like ZONE_DMA, but only 32-bit devices can access it
 * ZONE_NORMAL - normal, regularly mapped, pages
-* ZONE_HIGHEM - "high memory", which are pages not permanentyl mapped into the kernel's address space
+* ZONE_HIGHMEM - "high memory", which are pages not permanently mapped into the kernel's address space
 
 The use and layout of the memory zones is architecture-dependent.
 
-Linux partition the system's pages into zones to have a pooling in place to satisfy allocation as needed.
+Linux partitions the system's pages into zones to have a pooling in place to satisfy allocation as needed.
 
 Each zone is represented by `struct zone`, which is defined in `<linux/mmzone.h>`.
 
@@ -86,9 +86,9 @@ The kernel provides one low-level mechanism for requesting memory, along with se
 struct page *alloc_pages(gfp_t gfp_mask, unsigned int order);
 ```
 
-This allocates 2^order (that is, 1 << order) contiguous physical pages and return a pointer to the first page's page structure; on error it returns NULL.
+This allocates 2^order (that is, 1 << order) contiguous physical pages and returns a pointer to the first page's page structure; on error it returns NULL.
 
-You can also use the `get_zeroed_page()` that allocates a single page, zero its contents and returns a pointer to its logical address.
+You can also use the `get_zeroed_page()` that allocates a single page, zeroes its contents and returns a pointer to its logical address.
 
 ## kmalloc()
 
@@ -100,7 +100,7 @@ The function is declared in `<linux/slab.h>`:
 void * kmalloc(size_t size, gfp_t flags);
 ```
 
-The function returns a pointer to a region of memory that is at least `size` bytes in length. The region of memory is physcally contiguous.
+The function returns a pointer to a region of memory that is at least `size` bytes in length. The region of memory is physically contiguous.
 
 The vast majority of allocations in the kernel use the `GFP_KERNEL` flag. The resulting allocation is a normal priority allocation that might sleep.
 
@@ -130,4 +130,4 @@ If you frequently create many objects of the same type, consider using the slab 
 
 In kernel space the kernel's stack is small and fixed. When each process is given a small, fixed stack, memory consumption is minimized, and the kernel need not burden itself with stack management code.
 
-The size of the per-process kernel stacks depends on both the architecture and a compile-time option. Historically, the kernel stack has been two pages per process. This is usually 8KB for 32-bit architectures and 16KB for 64-bit architectures because they usualy have 4KB and 8KB pages, respectively.
+The size of the per-process kernel stacks depends on both the architecture and a compile-time option. Historically, the kernel stack has been two pages per process. This is usually 8KB for 32-bit architectures and 16KB for 64-bit architectures because they usually have 4KB and 8KB pages, respectively.

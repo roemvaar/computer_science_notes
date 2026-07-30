@@ -75,7 +75,7 @@ Real-Time Operating System (RTOS).
 
 ## What is a Real-Time Operating System?
 
-A Real-Time Operating System (RTOS) is an operating system designed to manage hardware resources and run applications with strict timing requirements. The primary goal is to ensure that tasks are completed within their deadline, providing deterministic and predictable behavior.
+A Real-Time Operating System (RTOS) is an operating system designed to manage hardware resources and run applications with strict timing requirements. The primary goal is to ensure that tasks are completed within their deadlines, providing deterministic and predictable behavior.
 
 ## What's the Difference Between a General-Purpose OS and an RTOS?
 

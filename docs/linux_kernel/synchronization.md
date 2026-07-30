@@ -7,7 +7,7 @@ nav_order: 1
 
 # Synchronization
 
-In a shared memory application, developers must ensure that shared resources are protected from concurrent access. If multiple threads of execution access and manipulate the date at the same time, the threads may overwrite each other's changes or access data while it is in an inconsistent state.
+In a shared memory application, developers must ensure that shared resources are protected from concurrent access. If multiple threads of execution access and manipulate the data at the same time, the threads may overwrite each other's changes or access data while it is in an inconsistent state.
 
 Before symmetric multiprocessing (SMP) was supported, preventing concurrent access of data was simple. SMP is difficult to implement because it creates race conditions in the kernel if two processes run kernel functions that access the same memory locations.
 
@@ -15,17 +15,17 @@ In SMP, the kernel must implement synchronization primitives (e.g., spinlocks) t
 
 The Linux kernel provides a family of synchronization methods that enable the developers to write kernel code that prevents race conditions, ensures the correct synchronization, and correctly runs on machines with multiple processors.
 
-The simplest method of ensuring synchronization are atomic operations.
+The simplest method of ensuring synchronization is atomic operations.
 
 The programmer should write kernel code that prevents race conditions, ensures the correct synchronization, and correctly runs on machines with multiple processors.
 
 **Methods:**
 
-* The simplest method of ensuring syncrhonization are the atomic operations.
+* The simplest method of ensuring synchronization is the atomic operations.
 
 * Spin locks are the most common lock in the kernel, which provide a lightweight single-holder lock that busy waits while contended.
 
-* Semaphores are sleeping locks, can be used to protect multiple resources with a count.
+* Semaphores are sleeping locks, which can be used to protect multiple resources with a count.
 
 * A mutex is a semaphore with a count of one, also known as a binary semaphore.
 
@@ -52,7 +52,7 @@ Ensuring that unsafe concurrency is prevented and that race conditions do not oc
 **Atomic operations** provide instructions that execute atomically - without interruption. Atomicity ensures that instructions occur without interruption and
 that they complete either in their entirety or not at all.
 
-Atomic operations are the **foundation** on which other synchronization methods are built. A good exercise, is to implement the "complex" syncrhonization methods using atomic operations, i.e., built them from foundational concepts.
+Atomic operations are the **foundation** on which other synchronization methods are built. A good exercise is to implement the "complex" synchronization methods using atomic operations, i.e., build them from foundational concepts.
 
 It is never possible for two atomic operations to occur on the same variable concurrently.
 
@@ -86,7 +86,7 @@ All the operations implemented on a specific architecture can be found in `<asm/
 
 A common use of atomic integer operations is to implement counters. Use `atomic_inc()` and `atomic_dec()`.
 
-Atomic integer operators are used for atomically performing an operating and testing the result. For example, the `atomic_dec_and_test()` function decrements by one the
+Atomic integer operators are used for atomically performing an operation and testing the result. For example, the `atomic_dec_and_test()` function decrements by one the
 given atomic value. If the result is zero, it returns true; otherwise, it returns false.
 
 The atomic operations are typically implemented as inline functions with inline assembly.
@@ -111,7 +111,7 @@ Other important functions are:
 * `test_and_clear_bit()`
 * `test_and_change_bit()`
 
-If you don't require atomicity (say, for example, because of a lock already protects
+If you don't require atomicity (say, for example, because a lock already protects
 your data), the nonatomic versions of all bitwise functions might be faster. For
 example, the nonatomic form of `set_bit()` is `__set_bit()`.
 
@@ -122,7 +122,7 @@ more complicated than incrementing a variable, reality is harder.
 
 In real life, critical regions can span multiple functions.
 
-The most common lock in the Linux kernel is the spin lock. A spin lock is a lock that can be held by at most one thread of execution. A spin lock provide a lightweight single-holder lock that busy waits while contended.
+The most common lock in the Linux kernel is the spin lock. A spin lock is a lock that can be held by at most one thread of execution. A spin lock provides a lightweight single-holder lock that busy waits while contended.
 
 ```c
 spin_lock(&mr_lock);
@@ -140,7 +140,7 @@ When a task attempts to acquire a semaphore that is unavailable, the semaphore p
 
 Semaphores allow for an arbitrary number of simultaneous lock holders. This value is called the **count**. Spin locks permit at most one task to hold the lock at a time.
 
-The most common value is to allow only one lock holder at a time. In this case, it is called a **mutex** (a type of semaphore with a count of one), it is also known as a binary semaphore.
+The most common value is to allow only one lock holder at a time. In this case, it is called a **mutex** (a type of semaphore with a count of one), and it is also known as a binary semaphore.
 
 Alternatively, the count can be initialized to a nonzero value greater than one. This is called a **counting** semaphore, and it enables at most count holders of the lock at a time. You down a semaphore to acquire it. You `up()` a semaphore to release it upon completion of a critical region.
 

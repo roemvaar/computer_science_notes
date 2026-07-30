@@ -19,11 +19,11 @@ In reality, it is more complex because of:
 * VLIW
 * Superscalar architectures (PowerPC 970)
 
-From an embedded software engineer perspective, it's important to understand how processors execute instructions in order to understand the timing of the code we write and to ensure that our system will meet its timing requirements, this way, we can understand what are the influences that different instructions can have on the execution time of a function.
+From an embedded software engineer's perspective, it's important to understand how processors execute instructions in order to understand the timing of the code we write and to ensure that our system will meet its timing requirements. This way, we can understand what influences different instructions can have on the execution time of a function.
 
-## Von Neumman vs Harvard
+## Von Neumann vs Harvard
 
-The Von Neumman architecture has a shared data and program memory.
+The Von Neumann architecture has a shared data and program memory.
 
 The Harvard architecture has a separate data and program memory. With Harvard architecture, you can fetch the instruction and data associated with it in parallel. This is useful for streaming applications where you need to read data from a sensor, and fetch the instruction to process that data.
 
@@ -41,7 +41,7 @@ Program status register: negative bit, zero bit, carry bit, overflow bit.
 
 ## Program Counter (PC)
 
-The program counter (PC) holds the addres of the intruction to be fetched next. The PC increments to the next instruction or it will jump to a a branch in case of a jump instruction.
+The program counter (PC) holds the address of the instruction to be fetched next. The PC increments to the next instruction or it will jump to a branch in case of a jump instruction.
 
 ## Complex Instruction Set Computers (CISC)
 
@@ -64,9 +64,9 @@ You need **registers between stages** to hold information produced in the previo
 
 ## Pipeline Hazards
 
-What problems can occur with pipelines? not every instruction might take exactly one instruction on the execution stage. 
+What problems can occur with pipelines? Not every instruction might take exactly one instruction on the execution stage. 
 
-Jumps also cause problems becuase you might have fetched and decoded other two instructions.
+Jumps also cause problems because you might have fetched and decoded two other instructions.
 
 A **data stall** occurs when an instruction is delayed because it depends on the result of an earlier instruction that has not yet finished.
 

@@ -68,7 +68,7 @@ The `Graph` class is used because, unlike in a tree, you can't necessarily reach
 
 An adjacency matrix is an NxN boolean matrix (where N is the number of nodes), where a true value at matrix[i][j] indicates an edge from node i to node j. You can also use an integer matrix with 0s and 1s.
 
-In an nudirected graph, an adjacency matrix will be symmetric. In a directed graph, it will not (necessarily) be symmetric.
+In an undirected graph, an adjacency matrix will be symmetric. In a directed graph, it will not (necessarily) be symmetric.
 
 ![graph_matrix](../../assets/img/graph_matrix.png)
 
@@ -85,7 +85,7 @@ In an nudirected graph, an adjacency matrix will be symmetric. In a directed gra
 
 ## **4. Important Techniques**
 
-* Ensure you are correctly keeping track of visited nodes and not visiting each node more than once. Otherwise your code could end up in an infinite loop.
+* Ensure you are correctly keeping track of visited nodes and not visiting each node more than once. Otherwise, your code could end up in an infinite loop.
 
 ---
 

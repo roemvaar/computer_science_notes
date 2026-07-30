@@ -42,7 +42,7 @@ nav_order: 1
 
 3. Fix it and create a patch
 
-    * Start working at mainline and use .config provided at Syskaller
+    * Start working at mainline and use .config provided at Syzkaller
 
     * Test your fix as much as you can
 

@@ -7,7 +7,7 @@ nav_order: 1
 
 # Rust
 
-This is a list of the core concepts that every Rust programmer should know, for more information go to the [Rust-Concepts] website.
+This is a list of the core concepts that every Rust programmer should know. For more information, go to the [Rust-Concepts] website.
 
 Test your Rust code online [here](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021).
 
@@ -24,7 +24,7 @@ Test your Rust code online [here](https://play.rust-lang.org/?version=stable&mod
 **Scalar types**: represent single values:
 
 * Integers: `i8`, `i16`, `i32`, `i64`, `i128`, `isize` (signed), `u8`, `u16`, `u32`, `u64`, `u128`,`usize` (unsigned).
-* Flotaing-Point: `f32`, `f64`.
+* Floating-Point: `f32`, `f64`.
 * Booleans: `bool` (true or false).
 * Characters: `char` (Unicode characters).
 
@@ -73,9 +73,9 @@ Crates are the building blocks of Rust projects. They can contain multiple modul
 
 ## Error Handling
 
-`Result` type: represents either a succesful value or an error.
+`Result` type: represents either a successful value or an error.
 
-`Option` type: represents either a value or the abscense of a value.
+`Option` type: represents either a value or the absence of a value.
 
 `unwrap()`: retrieves the value from a `Result` or `Option`, panicking if the value is not present.
 
@@ -101,7 +101,7 @@ Crates are the building blocks of Rust projects. They can contain multiple modul
 
 ## Lifetime Annotations
 
-**Lifetimes** are use to specify the duration of a reference's validity.
+**Lifetimes** are used to specify the duration of a reference's validity.
 
 **Lifetime Elision**: Rust can often infer lifetimes automatically, but you may need to provide explicit annotations in some cases.
 
@@ -113,7 +113,7 @@ Crates are the building blocks of Rust projects. They can contain multiple modul
 
 **Procedural Macros**: more powerful macros that can manipulate the Rust compiler's AST.
 
-## Aysnchronous Programming
+## Asynchronous Programming
 
 `async` and `await`: enable asynchronous programming, allowing you to write non-blocking code.
 
@@ -137,7 +137,7 @@ Rust manages memory automatically, using the **stack** for local variables and t
 
 ## Standard Library
 
-`std` is Rust's standarad library, providing a wide range of utilities and data structures.
+`std` is Rust's standard library, providing a wide range of utilities and data structures.
 
 `io`: Input/output operations.
 
@@ -155,7 +155,7 @@ Rust manages memory automatically, using the **stack** for local variables and t
 
 `#[test]` attribute: mark functions as unit tests.
 
-`cargo test` run tests using Cargo.
+`cargo test` runs tests using Cargo.
 
 ## Documentation
 

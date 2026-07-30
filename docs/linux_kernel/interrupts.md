@@ -27,9 +27,9 @@ An interrupt mechanism is a way for devices or subsystems to signal the processo
 
 1. Interrupt: hardware device generates an interrupt signal. CPU interrupts its current task and enters the interrupt handler.
 
-2. Interrupt handler: the function the kernel runs in response to a specific interrupt. Interrupt handlers are also known as interrupt service routine (ISR). The ISR performs time-critical and minimal processing to acknowledge and service the interrupt. For certain types of interrupts, the handler may schedule ![bottom half](./bottom_halves.md) processing. The interrupt handler for a device is part the device's **driver** - the kernel code that manages the device. Interrupt handlers run in interrupt context, and code executing in this context is unable to block.
+2. Interrupt handler: the function the kernel runs in response to a specific interrupt. Interrupt handlers are also known as interrupt service routine (ISR). The ISR performs time-critical and minimal processing to acknowledge and service the interrupt. For certain types of interrupts, the handler may schedule ![bottom half](./bottom_halves.md) processing. The interrupt handler for a device is part of the device's **driver** - the kernel code that manages the device. Interrupt handlers run in interrupt context, and code executing in this context is unable to block.
 
-3. Bottom half scheduling: if needed, the interrupt handler schedules, bottom half processing to handler less time-critical tasks or deferred work. Bottom halves are scheduled based on the nature of the processing required and the priority of the task.
+3. Bottom half scheduling: if needed, the interrupt handler schedules bottom half processing to handle less time-critical tasks or deferred work. Bottom halves are scheduled based on the nature of the processing required and the priority of the task.
 
 ## What is an IRQ?
 
@@ -41,7 +41,7 @@ An IRQ number is an enumeration of the possible interrupt sources on a machine. 
 
 Architectures can assign additional meaning to the IRQ numbers, and are encouraged to in the case where there is any manual configuration of the hardware involved. The ISA IRQs are a classic example of assigning this kind of additional meaning.
 
-The role of the interrupt handler depends entirely on the device and its reasons for issuing the interrupt. At a minimum, most interrupts handlers need to provide acknowledgement to the device that they received the interrupt. Devices that are more complex need to additionally send and receive data and perform extended work in the interrupt handler. The extended work is pushed as much as possible into the bottom half handler.
+The role of the interrupt handler depends entirely on the device and its reasons for issuing the interrupt. At a minimum, most interrupt handlers need to provide acknowledgement to the device that they received the interrupt. Devices that are more complex need to additionally send and receive data and perform extended work in the interrupt handler. The extended work is pushed as much as possible into the bottom half handler.
 
 ## Reentrancy and Interrupt Handlers
 

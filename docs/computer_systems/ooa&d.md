@@ -23,7 +23,7 @@ encapsulation, granularity, dependency, flexibility, performance, evolution, reu
 
 To design object-oriented software you must find pertinent objects, factor them into classes at the right granularity, define class interfaces and inheritance hierarchies, and establish key relationships among them.
 
-Functionality is a key concept, you need to get things working correctly as demanded by the client. Without functionality, you'll never make the customer happy. No matter how well-designed the application is.
+Functionality is a key concept; you need to get things working correctly as demanded by the client. Without functionality, you'll never make the customer happy. No matter how well-designed the application is.
 
 ## Object-oriented methodologies:
 
@@ -31,11 +31,11 @@ Functionality is a key concept, you need to get things working correctly as dema
 
 * Focus on the collaborations and responsibilities in your system.
 
-* Model the real world and translate the objects found during anaylisis into design.
+* Model the real world and translate the objects found during analysis into design.
 
-## Characteristics of a well design object oriented system:
+## Characteristics of a well-designed object-oriented system:
 
-* All well-structured object oriented architectures are full of patterns.
+* All well-structured object-oriented architectures are full of patterns.
 
 * Pay careful attention to the common collaborations among its objects.
 

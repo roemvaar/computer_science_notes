@@ -33,7 +33,7 @@ There are several tools for memory debugging:
 
 * SLAB/SLUB debugging
 
-Slab debugging uses a memory poison technique to detect several types of memory bugs in the SLAB/SUB allocators. The allocated buffers are guarded with memory that has been filled in with special markers.
+Slab debugging uses a memory poison technique to detect several types of memory bugs in the SLAB/SLUB allocators. The allocated buffers are guarded with memory that has been filled in with special markers.
 
 ![slab_debug](../../assets/img/slab_debug.png)
 

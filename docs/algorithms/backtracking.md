@@ -11,7 +11,7 @@ nav_order: 1
 
 A backtracking algorithm works by recursively exploring all possible solutions to a problem. It starts by choosing an initial solution, and then it explores all possible extensions of that solution. If an extension leads to a solution, the algorithm returns that solution. If an extension does not lead to a solution, the algorithm backtracks to the previous solution and tries a different extension.
 
-You have a decision space you can choice from. Your decisions are restricted somehow and your goal is to do something (solve something, like solve a sudoku board or fill n slots).
+You have a decision space you can choose from. Your decisions are restricted somehow and your goal is to do something (solve something, like solve a sudoku board or fill n slots).
 
 Understand subproblem. Craft your decision space. Adhere to your constraints. Converge to a base case.
 

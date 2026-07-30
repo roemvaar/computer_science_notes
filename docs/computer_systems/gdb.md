@@ -82,7 +82,7 @@ GDB is a powerful debugger for programs written in languages such as C, C++, and
 - **Cheat Sheets**: Search for "GDB cheat sheet" for quick command references.
 - **Online Tutorials**: Websites like [cs.cmu.edu/~gilpin/gdb.html](https://www.cs.cmu.edu/~gilpin/gdb.html) offer step-by-step guides.
 
-## Debuggging using GDB
+## Debugging using GDB
 
 The debugger is a good tool for tracing bugs.
 
@@ -92,7 +92,7 @@ In order to run a C program with gdb, we must compile it
 with the -g option which tells the compiler to embed debugging
 information for the debugger to use.
 
-Compile using with debug information:
+Compile with debug information:
 
 ```
 $ gcc -g -o program program.c
@@ -133,11 +133,11 @@ $ gdb -q --pid 1591979
 
 **Inside gdb (commands):**
 
-* run - starts the program. Runs until terminate, breakpoint
+* run - starts the program. Runs until termination, breakpoint
 or core dumps.
 * start - stop at the beginning.
 * step - step to the next line.
-* backtrace - list all the function calls (that leads to a
+* backtrace - list all the function calls (that lead to a
 crash) in the stack frame.
 * back program.c:22 - set a break point. Stop in crash.c line
 22.
@@ -159,8 +159,8 @@ deletes break point number n.
 * info locals - see the local variables and their values in the stack frame.
 * info args - see the arguments to the function.
 * watch <variable> - watchpoint works like breakpoints, but instead
-of always stopping at a line or function call, they stop the execution when
-the content of the variable changes
+of always stopping at a line or function call, it stops the execution when
+the content of the variable changes.
 
 Once our program has reached a break point, we can see the
 execution by using the following commands:
@@ -172,12 +172,12 @@ execution by using the following commands:
 ## Errors
 
 * Segmentation fault: some kind of invalid memory access.
-    SIGSEV - signal segmentation violation is an error signal
+    SIGSEGV - signal segmentation violation is an error signal
     in Unix systems (Linux). The error appears when a program
     or code tries to access an invalid memory location.
 
 In toronto/crash.c, we're trying to copy stuff into a buffer
-pointed to by buf which hasn't been allocated resulting in a
+pointed to by buf, which hasn't been allocated, resulting in a
 segmentation fault.
 
 ```
@@ -192,7 +192,7 @@ $2 = 0x0
 We were lucky in this case: because buf is a global variable
 and was automatically initialized to 0 (null pointer). If it
 were not, it might have contained an arbitrary value like
-0xbffff580 then it would be no longer obvious that the address
+0xbffff580, then it would no longer be obvious that the address
 points to in memory is invalid.
 
 Bugs like this are a real pain to track down.

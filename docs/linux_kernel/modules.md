@@ -9,7 +9,7 @@ nav_order: 1
 
 Every kernel module registers itself to serve future requests, and its initialization function terminates immediately. The module's exit function gets invoked just before the module is unloaded.
 
-A module is linked only to the kernel, and the only functions it can call are the ones exported by the kernel; there are no libraries to link to. Only functions that are part of the kernel itself may be used in kernel modules. Anything related to the kernel is declared in the kernel source tree headers. Most relevant headers live in `include/linux`, but other subdirectories of the `include` directory has been added to host material associated with specific kernel subsystems.
+A module is linked only to the kernel, and the only functions it can call are the ones exported by the kernel; there are no libraries to link to. Only functions that are part of the kernel itself may be used in kernel modules. Anything related to the kernel is declared in the kernel source tree headers. Most relevant headers live in `include/linux`, but other subdirectories of the `include` directory have been added to host material associated with specific kernel subsystems.
 
 To use modules on the Linux kernel, the `CONFIG_MODULES` needs to be enabled during kernel configuration. 
 

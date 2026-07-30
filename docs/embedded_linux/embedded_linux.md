@@ -8,7 +8,7 @@ permalink: /docs/embedded_linux
 
 # Embedded Linux
 
-Embedded Linux refers to the embedded systems that uses the Linux kernel as its main operating system. 
+Embedded Linux refers to the embedded systems that use the Linux kernel as its main operating system. 
 
 The Linux kernel is only a small component of an embedded system based on Linux. In addition to the Linux kernel, you need the following components to develop, test, and launch your embedded Linux project:
 
@@ -30,7 +30,7 @@ Optionally, there are other elements, such as:
 
 These are the components of an embedded Linux distribution.
 
-## Selection hardware for embedded Linux
+## Selecting hardware for embedded Linux
 
 1. A CPU architecture supported by the kernel - find them in the Linux repo at `arch/` directory. All of them are 32 or 64 bits, and most of them have MMU.
 

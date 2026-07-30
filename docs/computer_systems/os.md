@@ -28,13 +28,13 @@ Typical components of a kernel are:
 * A memory management system to manage process address spaces
 * System services such as networking and interprocess communication
 
-Kernels can be classified as monolithic or microkernels. A monolithic kernel consists of a single, large executable, where the entire system runs in kernel mode. Monolithic kernels offer high performance due to the absence of inter-process communication overhead, allowing for quicker system execution. Microkernels only have core functionalities in kernel mode, and the rest of the services run on user-mode processes. Both architectures have advantages and drawbacks; for example, in monolithic kernels, a bug specific to a subsystem can crash the whole kernel. In the same scenario, the microkernel solves this by killing the erroneous subsystem. The Linux kernel is an example of a monolithic kernel, and QNX is a microkernel.
+Kernels can be classified as monolithic or microkernel. A monolithic kernel consists of a single, large executable, where the entire system runs in kernel mode. Monolithic kernels offer high performance due to the absence of inter-process communication overhead, allowing for quicker system execution. Microkernels only have core functionalities in kernel mode, and the rest of the services run on user-mode processes. Both architectures have advantages and drawbacks; for example, in monolithic kernels, a bug specific to a subsystem can crash the whole kernel. In the same scenario, the microkernel solves this by killing the erroneous subsystem. The Linux kernel is an example of a monolithic kernel, and QNX is a microkernel.
 
 ### Microkernel vs Monolithic Kernel
 
 Linux supports the dynamic loading of kernel modules. Although the Linux kernel is monolithic, it can dynamically load and unload kernel code on demand.
 
-In a microkernel architecture the kernel contains just enough code that allows for message passing between different running processes. One of the advantages of this architecture is that the services are isolated, so bugs in one service won't impact other services. As such, if a service crashes we can restart it without affecting the whole system. This architecture imposes a modular approach to the kernel and offers memory protection between services but at a cost of performance. What is a simple function call between two services on a monolithic kernel now requires going through IPC and scheduling which will incur a performance penalty.
+In a microkernel architecture, the kernel contains just enough code that allows for message passing between different running processes. One of the advantages of this architecture is that the services are isolated, so bugs in one service won't impact other services. As such, if a service crashes, we can restart it without affecting the whole system. This architecture imposes a modular approach to the kernel and offers memory protection between services, but at a cost of performance. What was a simple function call between two services on a monolithic kernel now requires going through IPC and scheduling, which will incur a performance penalty.
 
 Modern monolithic kernels use several approaches to be modular (like microkernels):
 
@@ -75,16 +75,16 @@ The following figure shows the state transition that a given process can have.
 The kernel schedules individual threads, not processes. 
 preemptive, non-preemptive, round robin, O(1), fair O(log n)
 
-The kernel stores the list of processes in a circular doubly linked list called the task list have 
-a look at process descriptros - struct task_struct.
+The kernel stores the list of processes in a circular doubly linked list called the task list; have 
+a look at process descriptors - struct task_struct.
 
 The scheduling policy in a system must attempt to satisfy two conflicting goals: fast process 
 response time (low latency) and maximal system utilization (high throughput). 
 -->
 
-The kernel does process scheduling to determine which process will execute. Scheduling handles the context switch between a running process from the CPU and selecting another (ready) process based on particular policies [TP-Sched].
+The kernel does process scheduling to determine which process will execute. Scheduling handles the context switch between removing a running process from the CPU and selecting another (ready) process based on particular policies [TP-Sched].
 
-Scheduling allows a system to be multiprogram ("multitask"), i.e., the system gives the user the illusion that more than one program is running simultaneously on a certain CPU.
+Scheduling allows a system to be multiprogrammed ("multitask"), i.e., the system gives the user the illusion that more than one program is running simultaneously on a certain CPU.
 
 **Context Switch**
 
@@ -147,9 +147,9 @@ Thread 2:
 1 thd->proc_info = NULL;
 ```
 
-An atomicity violation bug occurs if Thread 1 is interrupted after it has checked if `thd->proc_info` is not NULL and before printing the value by Thread 2. The solution to this bug is to add locks around the shared-variable references, ensuring that it has a locked held when either thread accesses the `proc_info` field.
+An atomicity violation bug occurs if Thread 1 is interrupted after it has checked if `thd->proc_info` is not NULL and before printing the value by Thread 2. The solution to this bug is to add locks around the shared-variable references, ensuring that it has a lock held when either thread accesses the `proc_info` field.
 
-**Order violation** definition is "The desired order between two (groups of) memory accesses is flipped (i.e., A should always be executed before B, but the order is not enforeced during execution)."
+**Order violation** definition is "The desired order between two (groups of) memory accesses is flipped (i.e., A should always be executed before B, but the order is not enforced during execution)."
 
 Thread 1:
 
@@ -221,7 +221,7 @@ A process is a program (object code) in the midst of execution and all data and 
 to the program running. In other words, a process is the living result of running program code. 
 Processes provide two virtualizations: a virtualized processor and virtualized memory.
 
-Process include a set of resources such as open files and pending signals, internal kernel data,
+Processes include a set of resources such as open files and pending signals, internal kernel data,
 processor state, a memory address with one or more memory mappings, one or more threads of 
 execution, and a data section containing global variables.
 
@@ -236,13 +236,13 @@ Applications running in user-space communicate with the kernel via system calls.
 
 ![syscall](../../assets/img/syscall.png)
 
-When hardware wants to communicate with the system, it issues an interrupt that literrally 
-interrupts the processor, which in turn interrupts the kernel. A number identifies interrupts and
+When hardware wants to communicate with the system, it issues an interrupt that literally 
+interrupts the processor, which in turn interrupts the kernel. A number identifies interrupts, and
 the kernel uses this number to execute a specific interrupt handler to process and respond to the
 interrupt.
 
 In many operating systems (including Linux), the interrupts don't run in process context. They run
-in an special interrupt context, that is not associated with any process.
+in a special interrupt context that is not associated with any process.
 
 ## Memory Virtualization - Memory Management
 
@@ -335,7 +335,7 @@ Hardware solution: test and set lock solution and swap instructions.
 
 Solution using semaphore and mutex.
 
-## Persistance
+## Persistence
 
 Understand persistence via devices and file systems.
 

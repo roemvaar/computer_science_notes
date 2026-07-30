@@ -9,7 +9,7 @@ nav_order: 1
 
 ## **1. Overview**
 
-A hash table is dynamic set that is an effective data structure for implementing dictionaries. A great thing about hash tables is that regadless of how many items are stored on it, you can lookup elements in constant time on average.
+A hash table is a dynamic set that is an effective data structure for implementing dictionaries. A great thing about hash tables is that regardless of how many items are stored on it, you can lookup elements in constant time on average.
 
 ### Hash Functions
 
@@ -22,7 +22,7 @@ There are "infinite" number of hash functions but some are better than others. W
 
 ![hash_function](../../assets/img/hash_function.png)
 
-A collision is when to different strings maps to the same slot in the hash table. So many different strings that are possible for a limited number of slots, collisions are possible. The most used method to solve collisions is **separate chaining**, where each slot is a linked list. Another method is linear probing.
+A collision is when two different strings map to the same slot in the hash table. Since so many different strings are possible for a limited number of slots, collisions are possible. The most used method to solve collisions is **separate chaining**, where each slot is a linked list. Another method is linear probing.
 
 ### Sets
 
@@ -30,7 +30,7 @@ Collection of unique items. You can lookup, insert, and delete an element in con
 
 ### Maps
 
-Hash maps have the same functionalities than a hash set, except that it can store data.
+Hash maps have the same functionalities as a hash set, except that it can store data.
 
 * **Use Cases:** 
   * DNS Resolution: mapping a web address to an IP address.
@@ -45,7 +45,7 @@ Hash maps have the same functionalities than a hash set, except that it can stor
 | Insert (add)         | O(1)            | On average, worst case is O(n)             |  
 | Delete         | O(1)            | On average, worst case is O(n)             |
 
-Altough searching for an element in a hash table can take as long as O(n), in practice, hashing performs extremely well. Under reasonable assumptions, the average time to search for an element in a hash table is O(1).
+Although searching for an element in a hash table can take as long as O(n), in practice, hashing performs extremely well. Under reasonable assumptions, the average time to search for an element in a hash table is O(1).
 
 In the average case, hash tables are as fast as arrays at searching, and they are as fast as linked lists at inserts and deletes. In the worst case, it could be faster at all of those.
 
@@ -107,4 +107,4 @@ In the average case, hash tables are as fast as arrays at searching, and they ar
 
 ## **8. References**
 
-* [Hash Tables: Hash Fucntions, Sets, & Maps](https://www.youtube.com/watch?v=iZyxNEBpqFY&list=PLKYEe2WisBTFEr6laH5bR2J19j7sl5O8R&index=5&ab_channel=GregHogg)
+* [Hash Tables: Hash Functions, Sets, & Maps](https://www.youtube.com/watch?v=iZyxNEBpqFY&list=PLKYEe2WisBTFEr6laH5bR2J19j7sl5O8R&index=5&ab_channel=GregHogg)

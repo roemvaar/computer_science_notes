@@ -20,7 +20,7 @@ nav_order: 1
 ## Initialized Data
 
 The static variables are stored in the data segment of the memory. Different from the stack
-frame allocation for a certain function call, i.e., its value persists even after the function
+frame allocation for a certain function call, i.e., their value persists even after the function
 where it appears has returned.
 
 ## Uninitialized Data (bss)
@@ -29,11 +29,11 @@ where it appears has returned.
 
 When you request some memory to store something on the heap using new or malloc,
 you don't get a variable name and the only way to access it is through a pointer
-variable. Anything stored on the heap will stay on memory, unless explicitly freed using the ```free()``` function.
+variable. Anything stored on the heap will stay in memory, unless explicitly freed using the ```free()``` function.
 
 ## Stack
 
-Stack frame allocation (correspondant to each call of a certain function) - each time the
+Stack frame allocation (corresponding to each call of a certain function) - each time the
 function execution finishes all the local variables are gone from the memory.
 
 Whenever a function is invoked, some amount of memory from the stack is allocated for execution
@@ -58,11 +58,11 @@ over its address space and the address space it allocates to processes, i.e.:
 Their purpose is to enable an operating system to exercise a high degree of management and control over its address space
 and the address space it allocates to processes.
 
-In traditional embedded systems, the OS and all the tasks had equal access rights to all resources in the system which lead
+In traditional embedded systems, the OS and all the tasks had equal access rights to all resources in the system which led
 to problems where a bug in a process could wipe out memory contents anywhere in the system.
 
 Legacy embedded operating systems view and manage system memory as a single large, flat address space. That is, a
-microprocessor's address space exists from 0 to the top of it's physical address range.
+microprocessor's address space exists from 0 to the top of its physical address range.
   
 
 Advantages of using Linux on embedded systems:

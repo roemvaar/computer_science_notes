@@ -11,6 +11,6 @@ nav_order: 1
 * Using memory that you don't know
     * Deallocated stack or heap variable
     * Out-of-bounds reference to stack or heap array
-* Improper use of free/realloc by messing with the pointer hanlde
+* Improper use of free/realloc by messing with the pointer handle
 returned by malloc/calloc
 * Memory leaks (you allocated something you forgot to later free)

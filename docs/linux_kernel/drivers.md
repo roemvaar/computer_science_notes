@@ -13,7 +13,7 @@ The kernel code can be logically separated into core kernel code and device driv
 
 Char and block devices are accessed by filesystem nodes in the /dev directory. Block drivers have a completely different interface from the kernel's char drivers.
 
-Device number registration is one of the first steps that driver code must carry.
+Device number registration is one of the first steps that driver code must carry out.
 
 * When you create a device file (like /dev/tty0 or /dev/sda1), it is associated with a combination of a major and minor number.
 
@@ -51,6 +51,6 @@ Any network transaction is made through an interface that can exchange data with
 
 Usually, an interface is a hardware device, but it might also be a pure software device, like the loopback interface. A network interface is in charge of sending and receiving data packets, driven by the kernel's network subsystem, without knowing how individual transactions map to the actual packets being transmitted.
 
-Network devices are designed around the transmission and receipt of packets. A network driver knows nothing about individual connections, it only handles packets.
+Network devices are designed around the transmission and receipt of packets. A network driver knows nothing about individual connections; it only handles packets.
 
 Communication between the kernel and a network device driver differs completely from that used with char and block drivers. Instead of read and write, the kernel calls functions related to packet transmission.

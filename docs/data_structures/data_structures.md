@@ -15,7 +15,7 @@ among them, and the functions or operations that can be applied to the data.
 - Abstract Data Type (ADT): describes how variables of a given type are operated. It provides a list 
 of operations but doesn't explain how data operations happen. 
 
-- Data Structures: describe how data is to be organized and accesed in the computer's memory. 
+- Data Structures: describe how data is to be organized and accessed in the computer's memory. 
 They provide a way for implementing ADTs in data-handling modules.
 
 *With **ADTs**, you as a coder learn to interact with the data, like a driver uses a car's dashboard. In order
@@ -44,17 +44,17 @@ Operations:
   - pop(): retrieve and remove the item on top of the stack
 
 More "advanced" stacks may provide more operations: to check whether the stack is empty,
-to get the top element but don't remove it from the stack (top ()), or to get the number 
+to get the top element without removing it from the stack (top ()), or to get the number 
 of items currently in the stack. Operations are performed in constant time O(1).
  
 *Use case:* For implementing the "undo" feature in a text editor, every edition you make
-is pushed onto a stack. Should you want to undo, the text editor pops and edition from the
+is pushed onto a stack. Should you want to undo, the text editor pops an edition from the
 stack and reverts it.
 
 * **Queue**
 
 Used for storing and retrieving items. The retrieved item is always the one in front of the
-queue, i.e. FIFO (First-In, First-Out).Queue is the stack's antagonists.
+queue, i.e. FIFO (First-In, First-Out). Queue is the stack's antagonist.
 
 Operations:
 
@@ -62,7 +62,7 @@ Operations:
   - dequeue(): remove the item at the front of the queue
 
 *Use case:* When data is transferred asynchronously (data not necessarily received at same
-rate as sent) between two process, e.g. I/O buffers.
+rate as sent) between two processes, e.g. I/O buffers.
 
 
 * **Priority Queue**
@@ -76,7 +76,7 @@ Operations:
 
 *Use case:* In a computer there are typically many running processes but only one (or a
 few) CPUs to execute them. An operating system organizes all these processes waiting for
-execution in priority queue. Some processes are more time-sensitive and get immediate CPU
+execution in a priority queue. Some processes are more time-sensitive and get immediate CPU
 time, others wait in the queue longer.
 
 * **List**
@@ -134,7 +134,7 @@ Operations:
 
   - add(e): add an item to the set or produce an error if the item is already in the set
   - list(): list the items in the set
-  - delete(e): remove an item fro the set
+  - delete(e): remove an item from the set
 
 *Use case:* They're used when the order of the items you need to store is meaningless,
 or if you must ensure no items in the group occurs more than once.

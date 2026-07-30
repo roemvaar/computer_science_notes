@@ -9,7 +9,7 @@ nav_order: 1
 
 ## Jiffies
 
-The global variables **jiffies** holds the number of ticks that have occurred since the system booted. On boot, the kernel initializes the variable to zero, and it is incremented by one during each timer interrupt. Thus, because there are HZ timer interrupts in a second, there are HZ jiffies in a second. The system uptime is therefore jiffies/HZ seconds.
+The global variable **jiffies** holds the number of ticks that have occurred since the system booted. On boot, the kernel initializes the variable to zero, and it is incremented by one during each timer interrupt. Thus, because there are HZ timer interrupts in a second, there are HZ jiffies in a second. The system uptime is therefore jiffies/HZ seconds.
 
 In operating systems, a **jiffy** is the time between two successive clock ticks.
 

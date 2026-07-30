@@ -55,10 +55,10 @@ number of places to shift.
 2. Left shift (<<) operator is equivalent to multiplication by 2
 3. Use bitwise AND (&) operator to check even or odd number
 4. Store multiple flags in a single variable - use bit masking to store multiple flag values in a single variable
-5. Quickly find 1s and 2s complement of a number - 1 complement (~), get 2 complement by adding 1 to 1 complement
+5. Quickly find 1's and 2's complement of a number - 1's complement (~), get 2's complement by adding 1 to 1's complement
 6. Conditional assignment using XOR (^)
 7. Find maximum or minimum without if...else
-8. Swap to numbers without the third variable using XOR(^)
+8. Swap two numbers without the third variable using XOR(^)
 
 More bit twiddling hacks [here](https://graphics.stanford.edu/~seander/bithacks.html).
 

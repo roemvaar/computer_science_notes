@@ -21,7 +21,7 @@ The singly-linked list contains nodes that only point to the next node. The doub
 
 A node has two parts: the data part and the next part (and the previous part in case of a doubly-linked list). The data part contains the stored data, and the next (and previous) part provides the address of the next node.
 
-The first node of a linked list is called the head, and the last node is called the tail. The the list starts traversing from the head, while the tail ends the list pointing at NULL. 
+The first node of a linked list is called the head, and the last node is called the tail. The list starts traversing from the head, while the tail ends the list pointing at NULL. 
 
 In C, the simplest singly linked list element:
 
@@ -54,7 +54,7 @@ In C++, you could define a class for the list element:
     };
 ```
 
-In C++, It usually makes more sense to define a [template](https://www.geeksforgeeks.org/templates-cpp/) for the list element.
+In C++, it usually makes more sense to define a [template](https://www.geeksforgeeks.org/templates-cpp/) for the list element.
 
 **Hint:** Take care of the pointer-to-pointer structure. Nodes are to be created in memory with dynamic memory allocation.
 

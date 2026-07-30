@@ -16,7 +16,7 @@ Clearly define the problem in simple language. This helps to identify gaps in yo
 Start by asking basic questions, like "What is the simplest example?" or "How can you tell if the answer is right?"
 
 3. **Reduce the problem**
-Ask questions until you've reduced the problem to an essential problem that you can think you can solve.
+Ask questions until you've reduced the problem to an essential problem that you think you can solve.
 
 4. **Think hard**
 Think about the problem and trade off different solutions until you find one.

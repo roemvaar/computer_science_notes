@@ -13,13 +13,13 @@ Design patterns are divided into three:
 * Structural
 * Behavioral
 
-The must know patterns for each category are:
+The must-know patterns for each category are:
 
 * Creational: Singleton, Builder, Factory.
 * Structural: Facade, Adapter.
 * Behavioral: Strategy, Observer.
 
-## Must know concepts
+## Must-know concepts
 
 * Abstract Factory
 * Adapter

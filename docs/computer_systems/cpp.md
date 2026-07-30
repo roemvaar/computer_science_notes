@@ -172,7 +172,7 @@ A declaration introduces its name into a scope:
 
 * Class scope: a name is called a member name (or class member name) if defined in a class, outside any function, lambda, or enum class.
 
-* Namespace scope: a name is called namespace member name if defined in a namespaces outside any function, lambda, class, or enum class.
+* Namespace scope: a name is called a namespace member name if defined in a namespace outside any function, lambda, class, or enum class.
 
 A name not declared inside any other construct is called a global name and is said to be in the global namespace.
 
@@ -196,12 +196,12 @@ A name not declared inside any other construct is called a global name and is sa
 
 **Classes**.
 
-Having the data specified separately from the operations on it has advantages. However, a tighter connection is something needed. If we want to keep the representation inaccessible to users, to ease use, guarantee consistent use of the data, and allow us to improve the representation later.
+Having the data specified separately from the operations on it has advantages. However, a tighter connection is something needed. We want to keep the representation inaccessible to users, to ease use, guarantee consistent use of the data, and allow us to improve the representation later.
 
 To accomplish this, we have to distinguish between the interface to a type (to be used by all) and its implementation (which has access to the otherwise inaccessible data). The language mechanism for that is
 called a class.
 
-A class is defined as having a set of _members_, which can be data, function, or type members. The interface is defined by the public members of a class, and private members are accessible only though that interface.
+A class is defined as having a set of _members_, which can be data, function, or type members. The interface is defined by the public members of a class, and private members are accessible only through that interface.
 
 Example of a class:
 
@@ -264,7 +264,7 @@ double sqrt(double d) // definition of sqrt()
 * Header files (\*.h)
 
 Typically, we place the declarations that specify the interface to a module in a
-file with a name indicating its intended use
+file with a name indicating its intended use.
 
 The declarations would be placed in a file \*.h, and users will include that file,
 called a header file, to access that interface.
@@ -278,9 +278,9 @@ names shouldn’t clash with other names.
 ## Concrete Type vs Abstract Type
 
 * Concrete types: their representation is part of their definition. In that, they
-  resemble built-in types
+  resemble built-in types.
 
-* Abstract types: is a type that completely insulates a user from implementation
+* Abstract types: a type that completely insulates a user from implementation
   details. Example:
 
 ```cpp
@@ -347,7 +347,7 @@ complement of functions:
 
 ## Class - Constructor and Destructor
 
-Clearly, arranging code into classes and data into objects is a powerful organizing principle. Clearly also, dealing in classes and objects is inherently no less efficient than dealing with functions and data compared with C. Constructors and destructors, in C++, a constructor is a member function that is guaranteed to be called when an object is instantiated or created. This typically means that the compiler generates a constructor call at the point where the object is declared. Similarly, a destructor is guaranteed to be called when an object goes out of scope. So a constructor typically contains any initialization that an object needs, and a destructor does any tidying up needed when an object is no longer needed.
+Clearly, arranging code into classes and data into objects is a powerful organizing principle. Clearly also, dealing in classes and objects is inherently no less efficient than dealing with functions and data compared with C. Constructors and destructors: in C++, a constructor is a member function that is guaranteed to be called when an object is instantiated or created. This typically means that the compiler generates a constructor call at the point where the object is declared. Similarly, a destructor is guaranteed to be called when an object goes out of scope. So a constructor typically contains any initialization that an object needs, and a destructor does any tidying up needed when an object is no longer needed.
 
 ## C++ Containers Library
 

@@ -11,6 +11,6 @@ nav_order: 1
 
 * Instructions are emulated.
 * Target architecture is the architecture that is emulated.
-* Host architecture is the architecture that emulator runs on.
+* Host architecture is the architecture that the emulator runs on.
 
 <!-- https://linux-kernel-labs.github.io/refs/heads/master/lectures/virt.html -->
