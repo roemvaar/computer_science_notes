@@ -17,7 +17,6 @@ nav_order: 1
 * Polymorphism
 * Encapsulation
 * Abstraction
-* Inheritance
 * Composition
 * Inheritance vs Composition
 * Flexibility
@@ -46,7 +45,7 @@ By introducing principles like encapsulation and good class design into your cod
 
 ## Inheritance
 
-Is when one class extends another class to reuse or build upon the inherited class's behaviour.
+Inheritance is when one class extends another to reuse or build upon its behaviour.
 
 In inheritance, the class being inherited from is called the superclass (or parent class); the class that is doing the inheritance is called the subclass (or child class).
 
@@ -66,7 +65,7 @@ A subclass can override its superclass's behaviour to change how a method works.
 
 * Don't create problems to solve problems
 
-Things to have in mind:
+Things to keep in mind:
 
 * Where possible, always use accessor functions to read and write the attributes of objects
 
@@ -89,17 +88,40 @@ In object-oriented programming, abstraction focuses on **what an object does rat
 
 * What's a virtual function?
 
-Polymorphism
-
 A virtual function is a member function that you expect to be redefined in derived classes.
 
-Use virtual functions instead of a constructor in order to make a program more flexible, i.e., you can change the classes that get instantiated by making a subclass of the base class and redefining those virtual functions.
+Use virtual functions to make a program more flexible. By subclassing the base class and redefining its virtual functions, you can change which classes get instantiated at runtime.
 
 ## Classes and objects - member functions and data members
 
+A class defines a blueprint consisting of **data members** (attributes/state) and **member functions** (methods/behavior). An object is an instantiation of a class — a concrete instance with its own copy of the data members, sharing the class's member functions.
+- **Data members** hold the state of an object and are typically declared private, accessed only through member functions
+- **Member functions** define the operations an object can perform, often split into:
+  - **Accessors** (getters) — read state without modifying it
+  - **Mutators** (setters) — modify state under controlled conditions
+  - **Constructors/destructors** — manage object lifecycle
+- Member functions have implicit access to the object's data members via `this` (or the equivalent in the language)
+
 ## Object Oriented Design
 
+Good OO design isn't just about using classes and inheritance — it's about producing systems that are flexible, maintainable, and easy to extend.
+
+**Design Principles:**
+* Program to an interface, not an implementation
+* Favor object composition over class inheritance
+* Encapsulate what varies
+
+**Tips:**
+* Don't create problems to solve problems
+* Where possible, use accessor functions to read and write object attributes rather than exposing them directly
+* All services offered by a module should be available through a uniform notation, which does not betray whether they are implemented through storage or through computation
+
 ## Delegation vs inheritance
+
+Delegation is an alternative to inheritance for code reuse: instead of a subclass inheriting behavior from a superclass, an object holds a reference to another object and forwards (delegates) certain calls to it.
+- **Inheritance**: "is-a" relationship, fixed at compile time, behavior determined by the class hierarchy
+- **Delegation**: "has-a" relationship, can be changed at runtime, more flexible since behavior is composed rather than fixed
+- Delegation is closely related to the "favor composition over inheritance" principle — it avoids tight coupling and deep, fragile inheritance hierarchies
 
 ## Object Oriented in C
 
